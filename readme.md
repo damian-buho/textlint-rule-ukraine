@@ -1,6 +1,6 @@
 # textlint-rule-ukraine
 
-A [textlint](https://textlint.github.io/) rule that detects russified spellings of Ukrainian place names, personal names, and phrases — and fixes them automatically with `textlint --fix`.
+A [textlint](https://textlint.github.io/) rule that detects and fixes russified spellings of Ukrainian geographical and personal names.
 
 The corrections database is sourced from the [SpellingUkraine](https://github.com/Tyrrrz/SpellingUkraine) project (MIT) and other sources.
 
