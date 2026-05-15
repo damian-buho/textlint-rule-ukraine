@@ -1,4 +1,5 @@
 # textlint-rule-ukraine
+[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 
 A [textlint](https://textlint.github.io/) rule that detects and fixes russified spellings of Ukrainian geographical and personal names.
 
