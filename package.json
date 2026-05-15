@@ -1,0 +1,41 @@
+{
+  "name": "textlint-rule-ukraine",
+  "version": "1.0.0",
+  "description": "textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/",
+    "data/"
+  ],
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "npm run clean && tsc",
+    "test": "npm run build && tsc --project tsconfig.test.json && node --test 'test-dist/**/*.test.js'",
+    "prepublishOnly": "npm run build",
+    "release:patch": "npm version patch && git push --follow-tags && npm publish",
+    "release:minor": "npm version minor && git push --follow-tags && npm publish",
+    "release:major": "npm version major && git push --follow-tags && npm publish"
+  },
+  "keywords": [
+    "textlint",
+    "ukraine",
+    "spelling",
+    "transliteration"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine"
+  },
+  "peerDependencies": {
+    "textlint": ">=13.0.0"
+  },
+  "devDependencies": {
+    "@textlint/types": "^15.7.0",
+    "@types/node": "^25.8.0",
+    "textlint": "^15.7.0",
+    "textlint-tester": "^15.7.0",
+    "typescript": "^5.8.3"
+  }
+}

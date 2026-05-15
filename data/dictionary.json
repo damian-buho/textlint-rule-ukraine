@@ -1,0 +1,5033 @@
+[
+  {
+    "wrong": [
+      "Petropavlovskaya Borschagovka"
+    ],
+    "correct": "Petropavlivska Borshchahivka",
+    "id": "petropavlivska_borshchahivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sofievskaya Borschagovka"
+    ],
+    "correct": "Sofiiivska Borshchahivka",
+    "id": "sofiiivska_borshchahivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Korsun-Shevchenkovskiy",
+      "Korsun-Shevchenkovsky"
+    ],
+    "correct": "Korsun-Shevchenkivskyi",
+    "id": "korsun_shevchenkivskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belgorod-Dnestrovskiy",
+      "Bilhorod-Dnestrovsky"
+    ],
+    "correct": "Bilhorod-Dnistrovskyi",
+    "id": "bilhorod_dnistrovskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kamenka-Dneprovskaya"
+    ],
+    "correct": "Kamianka-Dniprovska",
+    "id": "kamianka_dniprovska",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Murovanye Kurylovtsy"
+    ],
+    "correct": "Murovani Kurylivtsi",
+    "id": "murovani_kurylivtsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vladimir Zelenskiy",
+      "Volodimir Zelenskyy",
+      "Volodymyr Zelenskiy",
+      "Volodymyr Zelensky"
+    ],
+    "correct": "Volodymyr Zelenskyy",
+    "id": "volodymyr_zelenskyy",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Kamenets-Podolskiy",
+      "Kamianets-Podolskyi",
+      "Kamyanets-Podilskyi"
+    ],
+    "correct": "Kamianets-Podilskyi",
+    "id": "kamianets_podilskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Klavdiyevo-Tarasove",
+      "Klavdiyevo-Tarasovo"
+    ],
+    "correct": "Klavdiievo-Tarasove",
+    "id": "klavdiievo_tarasove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Stanitsa Luganskaya"
+    ],
+    "correct": "Stanytsia Luhanska",
+    "id": "stanytsia_luhanska",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chervonogrigorovka"
+    ],
+    "correct": "Chervonohryhorivka",
+    "id": "chervonohryhorivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novgorod-Siverskiy",
+      "Novgorod-Siversky"
+    ],
+    "correct": "Novhorod-Siverskyi",
+    "id": "novhorod_siverskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novograd-Volynskiy",
+      "Novograd-Volynsky"
+    ],
+    "correct": "Novohrad-Volynskyi",
+    "id": "novohrad_volynskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Starokonstantinov",
+      "Starokonstyantyniv",
+      "Starokostantinov",
+      "Starokostyantyniv"
+    ],
+    "correct": "Starokostiantyniv",
+    "id": "starokostiantyniv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vitali Klichko",
+      "Vitali Klitchko",
+      "Vitali Klytschko",
+      "Vitaliy Klitschko"
+    ],
+    "correct": "Vitali Klitschko",
+    "id": "vitali_klitschko",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Blagoveshchenskoe",
+      "Blagovishchenske",
+      "Blahoveshchenskoe"
+    ],
+    "correct": "Blahovishchenske",
+    "id": "blahovishchenske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mogilev-Podolskiy",
+      "Mogilev-Podolsky",
+      "Mogilev-Podolskyi"
+    ],
+    "correct": "Mohyliv-Podilskyi",
+    "id": "mohyliv_podilskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Verkhnedneprovsk",
+      "Verkhnednieprovsk",
+      "Verkhnednyeprovsk"
+    ],
+    "correct": "Verkhnodniprovsk",
+    "id": "verkhnodniprovsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dobrovelichkovka"
+    ],
+    "correct": "Dobrovelychkivka",
+    "id": "dobrovelychkivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorishni Plavni",
+      "Gorishnie Plavni"
+    ],
+    "correct": "Horishni Plavni",
+    "id": "horishni_plavni",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kamen-Kashyrskyi"
+    ],
+    "correct": "Kamin-Kashyrskyi",
+    "id": "kamin_kashyrskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mala Danilovka",
+      "Malaya Danilovka"
+    ],
+    "correct": "Mala Danylivka",
+    "id": "mala_danylivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Staraya Vyzhevka"
+    ],
+    "correct": "Stara Vyzhivka",
+    "id": "stara_vyzhivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sudova Vyshnya",
+      "Sudovaya Vishnya"
+    ],
+    "correct": "Sudova Vyshnia",
+    "id": "sudova_vyshnia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikaya Dymerka"
+    ],
+    "correct": "Velyka Dymerka",
+    "id": "velyka_dymerka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikiy Bereznyi"
+    ],
+    "correct": "Velykyi Bereznyi",
+    "id": "velykyi_bereznyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dnepr",
+      "Dnepropetrovsk",
+      "Dnieper",
+      "Dniepr",
+      "Dniepropetrovsk",
+      "Dnipropetrovsk"
+    ],
+    "correct": "Dnipro",
+    "id": "dnipro",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ivano-Frankovsk"
+    ],
+    "correct": "Ivano-Frankivsk",
+    "id": "ivano_frankivsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mangush",
+      "Pershotravneve",
+      "Pershotravnevoe",
+      "Pershotravnevy"
+    ],
+    "correct": "Manhush",
+    "id": "manhush",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Molodogvardeysk"
+    ],
+    "correct": "Molodohvardiisk",
+    "id": "molodohvardiisk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novaya Borovaya"
+    ],
+    "correct": "Nova Borova",
+    "id": "nova_borova",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novaya Kakhovka"
+    ],
+    "correct": "Nova Kakhovka",
+    "id": "nova_kakhovka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nova Mayachka",
+      "Novaya Mayachka"
+    ],
+    "correct": "Nova Maiachka",
+    "id": "nova_maiachka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novie Sanzhary",
+      "Novyie Sanzhary"
+    ],
+    "correct": "Novi Sanzhary",
+    "id": "novi_sanzhary",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novomikolayivka",
+      "Novomykolayivka",
+      "Novonikolaevka"
+    ],
+    "correct": "Novomykolaivka",
+    "id": "novomykolaivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Severodonetsk",
+      "Severskodonetsk"
+    ],
+    "correct": "Siverskodonetsk",
+    "id": "siverskodonetsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Stara Siniava",
+      "Staraya Sinyava"
+    ],
+    "correct": "Stara Syniava",
+    "id": "stara_syniava",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikie Komyaty",
+      "Velyki Komyaty"
+    ],
+    "correct": "Velyki Komiaty",
+    "id": "velyki_komiaty",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikodolinskoe"
+    ],
+    "correct": "Velykodolynske",
+    "id": "velykodolynske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikiy Bychkov"
+    ],
+    "correct": "Velykyi Bychkiv",
+    "id": "velykyi_bychkiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ukrzaliznitsa",
+      "Ukrzaliznitsia",
+      "Ukrzaliznycia"
+    ],
+    "correct": "Ukrzaliznytsia",
+    "id": "ukrzaliznytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Slava Ukraina",
+      "Slava Ukraine",
+      "Slava Ukrajini"
+    ],
+    "correct": "Slava Ukraini",
+    "id": "slava_ukraini",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belaya Tserkov",
+      "Belaya Tserkva",
+      "Bila Cerkva"
+    ],
+    "correct": "Bila Tserkva",
+    "id": "bila_tserkva",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Broshnev-Osada"
+    ],
+    "correct": "Broshniv-Osada",
+    "id": "broshniv_osada",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dneprorudnoye",
+      "Dnieprorudne",
+      "Dnieprorudnoye"
+    ],
+    "correct": "Dniprorudne",
+    "id": "dniprorudne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gola Prystan",
+      "Golaya Pristan"
+    ],
+    "correct": "Hola Prystan",
+    "id": "hola_prystan",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kostiantinovka",
+      "Kostyantinovka",
+      "Kostyantynivka"
+    ],
+    "correct": "Kostiantynivka",
+    "id": "kostiantynivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Monastyrishche"
+    ],
+    "correct": "Monastyryshche",
+    "id": "monastyryshche",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novoguyvinskoe",
+      "Novohuivynskoe"
+    ],
+    "correct": "Novohuivynske",
+    "id": "novohuivynske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Alexandriyskoe"
+    ],
+    "correct": "Oleksandriiske",
+    "id": "oleksandriiske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Slobozhanskoe",
+      "Slobozhanskoye"
+    ],
+    "correct": "Slobozhanske",
+    "id": "slobozhanske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikie Luchki"
+    ],
+    "correct": "Velyki Luchky",
+    "id": "velyki_luchky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikiy Dalnik"
+    ],
+    "correct": "Velykyi Dalnyk",
+    "id": "velykyi_dalnyk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Geroyam Slava",
+      "Heroyam Slava"
+    ],
+    "correct": "Heroiam Slava",
+    "id": "heroiam_slava",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chernobaevka",
+      "Chernobaivka",
+      "Chernobayevka",
+      "Chornobayivka"
+    ],
+    "correct": "Chornobaivka",
+    "id": "chornobaivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gornostaevka",
+      "Gornostayevka"
+    ],
+    "correct": "Hornostaivka",
+    "id": "hornostaivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kotsiubinskoe",
+      "Kotsubinskoe",
+      "Kotsyubynske"
+    ],
+    "correct": "Kotsiubynske",
+    "id": "kotsiubynske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kropivnitskiy",
+      "Kropivnitskyi"
+    ],
+    "correct": "Kropyvnytskyi",
+    "id": "kropyvnytskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Krivoe Ozero",
+      "Krivoye Ozero"
+    ],
+    "correct": "Kryve Ozero",
+    "id": "kryve_ozero",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nizhnegorskiy",
+      "Nyzhnogirskiy",
+      "Nyznohirskyi"
+    ],
+    "correct": "Nyzhnohirskyi",
+    "id": "nyzhnohirskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Aleksandrovsk"
+    ],
+    "correct": "Oleksandrivsk",
+    "id": "oleksandrivsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pereshchepino"
+    ],
+    "correct": "Pereshchepyne",
+    "id": "pereshchepyne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Petropavlovka"
+    ],
+    "correct": "Petropavlivka",
+    "id": "petropavlivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rava-Russka",
+      "Rava-Russkaya"
+    ],
+    "correct": "Rava-Ruska",
+    "id": "rava_ruska",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Shahtarske",
+      "Shakhterske",
+      "Shakhterskoye"
+    ],
+    "correct": "Shakhtarske",
+    "id": "shakhtarske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Staryi Sambor"
+    ],
+    "correct": "Staryi Sambir",
+    "id": "staryi_sambir",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Velikie Mosty"
+    ],
+    "correct": "Velyki Mosty",
+    "id": "velyki_mosty",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Amvrosiyivka"
+    ],
+    "correct": "Amvrosiivka",
+    "id": "amvrosiivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bakhchisarai"
+    ],
+    "correct": "Bakhchysarai",
+    "id": "bakhchysarai",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belokurakino"
+    ],
+    "correct": "Bilokurakyne",
+    "id": "bilokurakyne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bogorodchani"
+    ],
+    "correct": "Bohorodchany",
+    "id": "bohorodchany",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Briuhovychi",
+      "Bryukhovichi",
+      "Bryukhovychi"
+    ],
+    "correct": "Briukhovychi",
+    "id": "briukhovychi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dneprovskoye",
+      "Dnieprovskoe"
+    ],
+    "correct": "Dniprovske",
+    "id": "dniprovske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khristinovka"
+    ],
+    "correct": "Khrystynivka",
+    "id": "khrystynivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kamishevakha",
+      "Kamyshevakha"
+    ],
+    "correct": "Komyshuvakha",
+    "id": "komyshuvakha",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Krasnopillya",
+      "Krasnopolie",
+      "Krasnopolye"
+    ],
+    "correct": "Krasnopillia",
+    "id": "krasnopillia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Magdalinovka",
+      "Magdalynivka"
+    ],
+    "correct": "Mahdalynivka",
+    "id": "mahdalynivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Malaya Viska",
+      "Malaya Vyska"
+    ],
+    "correct": "Mala Vyska",
+    "id": "mala_vyska",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Noviy Rozdol",
+      "Novyi Rozdol"
+    ],
+    "correct": "Novyi Rozdil",
+    "id": "novyi_rozdil",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Podvolochisk"
+    ],
+    "correct": "Pidvolochysk",
+    "id": "pidvolochysk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Shevchenkovo"
+    ],
+    "correct": "Shevchenkove",
+    "id": "shevchenkove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Verkhovtsevo"
+    ],
+    "correct": "Verkhivtseve",
+    "id": "verkhivtseve",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yasinovataya"
+    ],
+    "correct": "Yasynuvata",
+    "id": "yasynuvata",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zheltie Vody",
+      "Zheltye Vody"
+    ],
+    "correct": "Zhovti Vody",
+    "id": "zhovti_vody",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zvenigorodka",
+      "Zvenygorodka"
+    ],
+    "correct": "Zvenyhorodka",
+    "id": "zvenyhorodka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Andrushevka"
+    ],
+    "correct": "Andrushivka",
+    "id": "andrushivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belogorodka",
+      "Bilogorodka"
+    ],
+    "correct": "Bilohorodka",
+    "id": "bilohorodka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bobrovitsia",
+      "Bobrovytsa"
+    ],
+    "correct": "Bobrovytsia",
+    "id": "bobrovytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chemerovtsi",
+      "Chemerovtsy"
+    ],
+    "correct": "Chemerivtsi",
+    "id": "chemerivtsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chernigovka"
+    ],
+    "correct": "Chernihivka",
+    "id": "chernihivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chernomorsk"
+    ],
+    "correct": "Chornomorsk",
+    "id": "chornomorsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chinadievo",
+      "Chynadiieve",
+      "Chynadiyovo"
+    ],
+    "correct": "Chynadiiovo",
+    "id": "chynadiiovo",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dubrovitsya",
+      "Dubrovytsya"
+    ],
+    "correct": "Dubrovytsia",
+    "id": "dubrovytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorodnitsa",
+      "Gorodnytsia"
+    ],
+    "correct": "Horodnytsia",
+    "id": "horodnytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorodishche",
+      "Gorodyshche"
+    ],
+    "correct": "Horodyshche",
+    "id": "horodyshche",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ilarionovo",
+      "Illarionove",
+      "Illarionovo"
+    ],
+    "correct": "Ilarionove",
+    "id": "ilarionove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Karnukhovka"
+    ],
+    "correct": "Karnaukhivka",
+    "id": "karnaukhivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khmelnitsky"
+    ],
+    "correct": "Khmelnytskyi",
+    "id": "khmelnytskyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Korostishov",
+      "Korostyshov"
+    ],
+    "correct": "Korostyshiv",
+    "id": "korostyshiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mikhailivka",
+      "Mikhailovka",
+      "Mikhaylovka",
+      "Mykhailivka"
+    ],
+    "correct": "Mykhailivka",
+    "id": "mykhailivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nedrigaylov",
+      "Nedrygailiv"
+    ],
+    "correct": "Nedryhailiv",
+    "id": "nedryhailiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nemeshaevo",
+      "Nemeshayevo",
+      "Nemishayeve",
+      "Nemysheev"
+    ],
+    "correct": "Nemishaieve",
+    "id": "nemishaieve",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Novoselitsa"
+    ],
+    "correct": "Novoselytsia",
+    "id": "novoselytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pechenezhin"
+    ],
+    "correct": "Pechenizhyn",
+    "id": "pechenizhyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pereginske",
+      "Pereginskoe"
+    ],
+    "correct": "Perehinske",
+    "id": "perehinske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pyatihatki",
+      "Pyatykhatky"
+    ],
+    "correct": "Piatykhatky",
+    "id": "piatykhatky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pidgorodne",
+      "Podgorodnoe"
+    ],
+    "correct": "Pidhorodne",
+    "id": "pidhorodne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pogrebische",
+      "Pogrebysche",
+      "Pohrebische"
+    ],
+    "correct": "Pohrebyshche",
+    "id": "pohrebyshche",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Priazovske",
+      "Priazovskoe"
+    ],
+    "correct": "Pryazovske",
+    "id": "pryazovske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Shakhtyorsk"
+    ],
+    "correct": "Shakhtarsk",
+    "id": "shakhtarsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Svetlovodsk"
+    ],
+    "correct": "Svitlovodsk",
+    "id": "svitlovodsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sinelnikovo"
+    ],
+    "correct": "Synelnykove",
+    "id": "synelnykove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Trostyanets"
+    ],
+    "correct": "Trostianets",
+    "id": "trostianets",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tsarichanka"
+    ],
+    "correct": "Tsarychanka",
+    "id": "tsarychanka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "The Ukraine",
+      "Ukrajina"
+    ],
+    "correct": "Ukraine",
+    "id": "ukraine",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vakhrushevo"
+    ],
+    "correct": "Vakhrusheve",
+    "id": "vakhrusheve",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Voronovitsa"
+    ],
+    "correct": "Voronovytsia",
+    "id": "voronovytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vishnevoe",
+      "Vishnevoye",
+      "Vishnyovoye"
+    ],
+    "correct": "Vyshneve",
+    "id": "vyshneve",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Evpatoria",
+      "Yevpatoria",
+      "Yevpatoriya"
+    ],
+    "correct": "Yevpatoriia",
+    "id": "yevpatoriia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Anastasia",
+      "Anastasija",
+      "Anastasiya"
+    ],
+    "correct": "Anastasiia",
+    "id": "anastasiia",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Ekaterina",
+      "Katerina",
+      "Yekaterina"
+    ],
+    "correct": "Kateryna",
+    "id": "kateryna",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Aleksandra",
+      "Alexandra",
+      "Olexandra"
+    ],
+    "correct": "Oleksandra",
+    "id": "oleksandra",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Anthratsyt",
+      "Antracit",
+      "Antrasit"
+    ],
+    "correct": "Antratsyt",
+    "id": "antratsyt",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Apostolovo"
+    ],
+    "correct": "Apostolove",
+    "id": "apostolove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Artemovsk",
+      "Artyomovsk"
+    ],
+    "correct": "Artemivsk",
+    "id": "artemivsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Barvenkove",
+      "Barvenkovo"
+    ],
+    "correct": "Barvinkove",
+    "id": "barvinkove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Baryshevka"
+    ],
+    "correct": "Baryshivka",
+    "id": "baryshivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bezludivka"
+    ],
+    "correct": "Bezliudivka",
+    "id": "bezliudivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bogdanovka"
+    ],
+    "correct": "Bohdanivka",
+    "id": "bohdanivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Borodyanka"
+    ],
+    "correct": "Borodianka",
+    "id": "borodianka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chichelnik"
+    ],
+    "correct": "Chechelnyk",
+    "id": "chechelnyk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chernyvtsi"
+    ],
+    "correct": "Chernivtsi",
+    "id": "chernivtsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dolinskaya"
+    ],
+    "correct": "Dolynska",
+    "id": "dolynska",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Druzhkovka"
+    ],
+    "correct": "Druzhkivka",
+    "id": "druzhkivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gulaypole",
+      "Guliapole",
+      "Hulaypole",
+      "Hulyaypole"
+    ],
+    "correct": "Huliaipole",
+    "id": "huliaipole",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Hvardiyske"
+    ],
+    "correct": "Hvardiiske",
+    "id": "hvardiiske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kegichevka"
+    ],
+    "correct": "Kehychivka",
+    "id": "kehychivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khartsyzsk"
+    ],
+    "correct": "Khartsyzk",
+    "id": "khartsyzk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khrestovka"
+    ],
+    "correct": "Khrestivka",
+    "id": "khrestivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Hrustalnyi"
+    ],
+    "correct": "Khrustalnyi",
+    "id": "khrustalnyi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Koriukovka",
+      "Korukovka"
+    ],
+    "correct": "Koriukivka",
+    "id": "koriukivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Iskorosten"
+    ],
+    "correct": "Korosten",
+    "id": "korosten",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kremenchug"
+    ],
+    "correct": "Kremenchuk",
+    "id": "kremenchuk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kriviy Rig",
+      "Krivoy Rog",
+      "Kryvyi Rig"
+    ],
+    "correct": "Kryvyi Rih",
+    "id": "kryvyi_rih",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kirnasovka",
+      "Kyrnasovka"
+    ],
+    "correct": "Kyrnasivka",
+    "id": "kyrnasivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lokhvitsa",
+      "Lokhvytsya"
+    ],
+    "correct": "Lokhvytsia",
+    "id": "lokhvytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lisichansk"
+    ],
+    "correct": "Lysychansk",
+    "id": "lysychansk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mizhigiria",
+      "Mizhigirya"
+    ],
+    "correct": "Mizhhiria",
+    "id": "mizhhiria",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nadvorna",
+      "Nadvornaya",
+      "Nadwirna"
+    ],
+    "correct": "Nadvirna",
+    "id": "nadvirna",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pereyaslav"
+    ],
+    "correct": "Pereiaslav",
+    "id": "pereiaslav",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pokrovskoe"
+    ],
+    "correct": "Pokrovske",
+    "id": "pokrovske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pomochnaya",
+      "Pomoshnaya"
+    ],
+    "correct": "Pomichna",
+    "id": "pomichna",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rozhishche"
+    ],
+    "correct": "Rozhyshche",
+    "id": "rozhyshche",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rzhishchev",
+      "Rzhyshchev"
+    ],
+    "correct": "Rzhyshchiv",
+    "id": "rzhyshchiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Shepetovka"
+    ],
+    "correct": "Shepetivka",
+    "id": "shepetivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Shiriaievo",
+      "Shiryaevo"
+    ],
+    "correct": "Shyriaieve",
+    "id": "shyriaieve",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Starobelsk"
+    ],
+    "correct": "Starobilsk",
+    "id": "starobilsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Stepanovka"
+    ],
+    "correct": "Stepanivka",
+    "id": "stepanivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Strizhavka"
+    ],
+    "correct": "Stryzhavka",
+    "id": "stryzhavka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sukhodolsk"
+    ],
+    "correct": "Sukhodilsk",
+    "id": "sukhodilsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tysmenitsa"
+    ],
+    "correct": "Tysmenytsia",
+    "id": "tysmenytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vasilevka",
+      "Vasilivka",
+      "Vasilyevka"
+    ],
+    "correct": "Vasylivka",
+    "id": "vasylivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vasilkovka"
+    ],
+    "correct": "Vasylkivka",
+    "id": "vasylkivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Verkhovina"
+    ],
+    "correct": "Verkhovyna",
+    "id": "verkhovyna",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Veselinovo"
+    ],
+    "correct": "Veselynove",
+    "id": "veselynove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vilnogirsk",
+      "Volnogorsk"
+    ],
+    "correct": "Vilnohirsk",
+    "id": "vilnohirsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Volnavakha",
+      "Volnovaha"
+    ],
+    "correct": "Volnovakha",
+    "id": "volnovakha",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vinogradov"
+    ],
+    "correct": "Vynohradiv",
+    "id": "vynohradiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yasnogorka"
+    ],
+    "correct": "Yasnohirka",
+    "id": "yasnohirka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yemilchino"
+    ],
+    "correct": "Yemilchyne",
+    "id": "yemilchyne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yenakiyevo"
+    ],
+    "correct": "Yenakiieve",
+    "id": "yenakiieve",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zaporizhia",
+      "Zaporozhie",
+      "Zaporozhye"
+    ],
+    "correct": "Zaporizhzhia",
+    "id": "zaporizhzhia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zavodskoe",
+      "Zavodskoye"
+    ],
+    "correct": "Zavodske",
+    "id": "zavodske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Margarita",
+      "Margaryta",
+      "Marharita"
+    ],
+    "correct": "Marharyta",
+    "id": "marharyta",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Miroslava"
+    ],
+    "correct": "Myroslava",
+    "id": "myroslava",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Aleksandr",
+      "Alexander",
+      "Alexandr",
+      "Olexander",
+      "Olexandr"
+    ],
+    "correct": "Oleksandr",
+    "id": "oleksandr",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Svetlana",
+      "Svietlana"
+    ],
+    "correct": "Svitlana",
+    "id": "svitlana",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Viktoria",
+      "Viktoriya"
+    ],
+    "correct": "Viktoriia",
+    "id": "viktoriia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Balakleya"
+    ],
+    "correct": "Balakliia",
+    "id": "balakliia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Baranovka"
+    ],
+    "correct": "Baranivka",
+    "id": "baranivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Berdyansk"
+    ],
+    "correct": "Berdiansk",
+    "id": "berdiansk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Berdichiv"
+    ],
+    "correct": "Berdychiv",
+    "id": "berdychiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Beregove",
+      "Beregovo",
+      "Beregovoe"
+    ],
+    "correct": "Berehove",
+    "id": "berehove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Berezovka"
+    ],
+    "correct": "Berezivka",
+    "id": "berezivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belogorsk"
+    ],
+    "correct": "Bilohirsk",
+    "id": "bilohirsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belopolye"
+    ],
+    "correct": "Bilopillya",
+    "id": "bilopillya",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belovodsk"
+    ],
+    "correct": "Bilovodsk",
+    "id": "bilovodsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belozerka"
+    ],
+    "correct": "Bilozerka",
+    "id": "bilozerka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bogoduhov",
+      "Bohoduhov"
+    ],
+    "correct": "Bohodukhiv",
+    "id": "bohodukhiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chernigiv",
+      "Chernigov"
+    ],
+    "correct": "Chernihiv",
+    "id": "chernihiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chernobil",
+      "Chernobyl"
+    ],
+    "correct": "Chornobyl",
+    "id": "chornobyl",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dobrotvor"
+    ],
+    "correct": "Dobrotvir",
+    "id": "dobrotvir",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Drogobich",
+      "Drogobych"
+    ],
+    "correct": "Drohobych",
+    "id": "drohobych",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Energodar"
+    ],
+    "correct": "Enerhodar",
+    "id": "enerhodar",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Genichesk"
+    ],
+    "correct": "Henichesk",
+    "id": "henichesk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorodenka"
+    ],
+    "correct": "Horodenka",
+    "id": "horodenka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Illovaisk",
+      "Illovaysk",
+      "Ilovaysk"
+    ],
+    "correct": "Ilovaisk",
+    "id": "ilovaisk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kadiyevka"
+    ],
+    "correct": "Kadiivka",
+    "id": "kadiivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kalinovka"
+    ],
+    "correct": "Kalynivka",
+    "id": "kalynivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kamyanske"
+    ],
+    "correct": "Kamianske",
+    "id": "kamianske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khorochev",
+      "Khoroshev"
+    ],
+    "correct": "Khoroshiv",
+    "id": "khoroshiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kobelyaki",
+      "Kobelyaky"
+    ],
+    "correct": "Kobeliaky",
+    "id": "kobeliaky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Koroliovo",
+      "Korolyovo"
+    ],
+    "correct": "Korolevo",
+    "id": "korolevo",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kozhelets"
+    ],
+    "correct": "Kozelets",
+    "id": "kozelets",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kryzhopol"
+    ],
+    "correct": "Kryzhopil",
+    "id": "kryzhopil",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Liubeshov",
+      "Lyubeshov"
+    ],
+    "correct": "Liubeshiv",
+    "id": "liubeshiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Limanskoe",
+      "Lymanskoe"
+    ],
+    "correct": "Lymanske",
+    "id": "lymanske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Makeievka",
+      "Makeyevka",
+      "Makiyivka"
+    ],
+    "correct": "Makiivka",
+    "id": "makiivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Marganets"
+    ],
+    "correct": "Marhanets",
+    "id": "marhanets",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Massandra"
+    ],
+    "correct": "Masandra",
+    "id": "masandra",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mezhevaia",
+      "Mezhevaya"
+    ],
+    "correct": "Mezhova",
+    "id": "mezhova",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mukachev",
+      "Mukachevo"
+    ],
+    "correct": "Mukacheve",
+    "id": "mukacheve",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mikolaiv",
+      "Mykolayiv",
+      "Nikolaev",
+      "Nikolaiv",
+      "Nikolayev"
+    ],
+    "correct": "Mykolaiv",
+    "id": "mykolaiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mirnograd"
+    ],
+    "correct": "Myrnohrad",
+    "id": "myrnohrad",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mironovka",
+      "Myronovka"
+    ],
+    "correct": "Myronivka",
+    "id": "myronivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Obukhovka"
+    ],
+    "correct": "Obukhivka",
+    "id": "obukhivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pavlograd"
+    ],
+    "correct": "Pavlohrad",
+    "id": "pavlohrad",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pechenegi"
+    ],
+    "correct": "Pechenihy",
+    "id": "pechenihy",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Peschanka"
+    ],
+    "correct": "Pishchanka",
+    "id": "pishchanka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pivdennoe"
+    ],
+    "correct": "Pivdenne",
+    "id": "pivdenne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Radomishl"
+    ],
+    "correct": "Radomyshl",
+    "id": "radomyshl",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Radivilov"
+    ],
+    "correct": "Radyvyliv",
+    "id": "radyvyliv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rubezhne",
+      "Rubezhnoe"
+    ],
+    "correct": "Rubizhne",
+    "id": "rubizhne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Semenovka"
+    ],
+    "correct": "Semenivka",
+    "id": "semenivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Shargorod"
+    ],
+    "correct": "Sharhorod",
+    "id": "sharhorod",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Slavutich"
+    ],
+    "correct": "Slavutych",
+    "id": "slavutych",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Slavyansk",
+      "Slovyansk"
+    ],
+    "correct": "Sloviansk",
+    "id": "sloviansk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Snezhnoye"
+    ],
+    "correct": "Snizhne",
+    "id": "snizhne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sofievka",
+      "Sofiyevka",
+      "Sofiyivka"
+    ],
+    "correct": "Sofiivka",
+    "id": "sofiivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Solotvino"
+    ],
+    "correct": "Solotvyno",
+    "id": "solotvyno",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Stavische"
+    ],
+    "correct": "Stavyshche",
+    "id": "stavyshche",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tomakovka"
+    ],
+    "correct": "Tomakivka",
+    "id": "tomakivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tomashpol"
+    ],
+    "correct": "Tomashpil",
+    "id": "tomashpil",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ukrayinka"
+    ],
+    "correct": "Ukrainka",
+    "id": "ukrainka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ukrayinsk"
+    ],
+    "correct": "Ukrainsk",
+    "id": "ukrainsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vapnyarka"
+    ],
+    "correct": "Vapniarka",
+    "id": "vapniarka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vilnyansk",
+      "Volnyansk"
+    ],
+    "correct": "Vilniansk",
+    "id": "vilniansk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vinkovtsy"
+    ],
+    "correct": "Vinkivtsi",
+    "id": "vinkivtsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vinitsia",
+      "Vinnitsa",
+      "Vinnytsya"
+    ],
+    "correct": "Vinnytsia",
+    "id": "vinnytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Volchansk"
+    ],
+    "correct": "Vovchansk",
+    "id": "vovchansk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vyshgorod"
+    ],
+    "correct": "Vyshhorod",
+    "id": "vyshhorod",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Akimovka",
+      "Yakimovka"
+    ],
+    "correct": "Yakymivka",
+    "id": "yakymivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zhmerinka"
+    ],
+    "correct": "Zhmerynka",
+    "id": "zhmerynka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zhidachov"
+    ],
+    "correct": "Zhydachiv",
+    "id": "zhydachiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Anatoliy"
+    ],
+    "correct": "Anatolii",
+    "id": "anatolii",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Angelina"
+    ],
+    "correct": "Anhelina",
+    "id": "anhelina",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Liudmila",
+      "Ludmila",
+      "Lyudmila",
+      "Lyudmyla"
+    ],
+    "correct": "Liudmyla",
+    "id": "liudmyla",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Natalia",
+      "Nataliya",
+      "Natalya"
+    ],
+    "correct": "Nataliia",
+    "id": "nataliia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Agrarne",
+      "Agrarnoe"
+    ],
+    "correct": "Ahrarne",
+    "id": "ahrarne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Avdeevka"
+    ],
+    "correct": "Avdiivka",
+    "id": "avdiivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Balabino"
+    ],
+    "correct": "Balabyne",
+    "id": "balabyne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Berislav"
+    ],
+    "correct": "Beryslav",
+    "id": "beryslav",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belenkoe"
+    ],
+    "correct": "Bilenke",
+    "id": "bilenke",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bolechiw",
+      "Bolehiv"
+    ],
+    "correct": "Bolekhiv",
+    "id": "bolekhiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Borovaya"
+    ],
+    "correct": "Borova",
+    "id": "borova",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Borislav"
+    ],
+    "correct": "Boryslav",
+    "id": "boryslav",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Borispil",
+      "Borispol"
+    ],
+    "correct": "Boryspil",
+    "id": "boryspil",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bratskoe"
+    ],
+    "correct": "Bratske",
+    "id": "bratske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bushtino"
+    ],
+    "correct": "Bushtyno",
+    "id": "bushtyno",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Cherkasi"
+    ],
+    "correct": "Cherkasy",
+    "id": "cherkasy",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chortkov"
+    ],
+    "correct": "Chortkiv",
+    "id": "chortkiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chihyrin"
+    ],
+    "correct": "Chyhyryn",
+    "id": "chyhyryn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Delyatin",
+      "Diliatyn"
+    ],
+    "correct": "Deliatyn",
+    "id": "deliatyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorlovka"
+    ],
+    "correct": "Horlivka",
+    "id": "horlivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorodnia",
+      "Gorodnya"
+    ],
+    "correct": "Horodnia",
+    "id": "horodnia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorohov",
+      "Gorokhov"
+    ],
+    "correct": "Horokhiv",
+    "id": "horokhiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gostomel",
+      "Hostemel"
+    ],
+    "correct": "Hostomel",
+    "id": "hostomel",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Grebenka"
+    ],
+    "correct": "Hrebinka",
+    "id": "hrebinka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Grebenki"
+    ],
+    "correct": "Hrebinky",
+    "id": "hrebinky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gubiniha"
+    ],
+    "correct": "Hubynykha",
+    "id": "hubynykha",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ilyintsi"
+    ],
+    "correct": "Illintsi",
+    "id": "illintsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ivanovka"
+    ],
+    "correct": "Ivanivka",
+    "id": "ivanivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ivanichi"
+    ],
+    "correct": "Ivanychi",
+    "id": "ivanychi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Izyaslav",
+      "Zaslav"
+    ],
+    "correct": "Iziaslav",
+    "id": "iziaslav",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kagarlik",
+      "Kagarlyk"
+    ],
+    "correct": "Kaharlyk",
+    "id": "kaharlyk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kalmiske"
+    ],
+    "correct": "Kalmiuske",
+    "id": "kalmiuske",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khmelnik"
+    ],
+    "correct": "Khmilnyk",
+    "id": "khmilnyk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khodorov"
+    ],
+    "correct": "Khodoriv",
+    "id": "khodoriv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kivertsy"
+    ],
+    "correct": "Kivertsi",
+    "id": "kivertsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kostopol"
+    ],
+    "correct": "Kostopil",
+    "id": "kostopil",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kazatin",
+      "Kozyatyn"
+    ],
+    "correct": "Koziatyn",
+    "id": "koziatyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kupyansk"
+    ],
+    "correct": "Kupiansk",
+    "id": "kupiansk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kushugum"
+    ],
+    "correct": "Kushuhum",
+    "id": "kushuhum",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kvasilov",
+      "Kvasylov"
+    ],
+    "correct": "Kvasyliv",
+    "id": "kvasyliv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ladyzhin"
+    ],
+    "correct": "Ladyzhyn",
+    "id": "ladyzhyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lanovtsy"
+    ],
+    "correct": "Lanivtsi",
+    "id": "lanivtsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Letichev",
+      "Letychev"
+    ],
+    "correct": "Letychiv",
+    "id": "letychiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lyubotyn"
+    ],
+    "correct": "Liubotyn",
+    "id": "liubotyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lozovaya"
+    ],
+    "correct": "Lozova",
+    "id": "lozova",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lipovets"
+    ],
+    "correct": "Lypovets",
+    "id": "lypovets",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lysyanka"
+    ],
+    "correct": "Lysianka",
+    "id": "lysianka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Маневичи"
+    ],
+    "correct": "Manevychi",
+    "id": "manevychi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mirgorod",
+      "Mirhorod",
+      "Myrgorod"
+    ],
+    "correct": "Myrhorod",
+    "id": "myrhorod",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nemiroff",
+      "Nemirov"
+    ],
+    "correct": "Nemyriv",
+    "id": "nemyriv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Neteshin",
+      "Netishin"
+    ],
+    "correct": "Netishyn",
+    "id": "netishyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Akhtyrka"
+    ],
+    "correct": "Okhtyrka",
+    "id": "okhtyrka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Elenovka",
+      "Olenovka"
+    ],
+    "correct": "Olenivka",
+    "id": "olenivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Opishnya",
+      "Oposhnia",
+      "Oposhnya"
+    ],
+    "correct": "Opishnia",
+    "id": "opishnia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Perechin"
+    ],
+    "correct": "Perechyn",
+    "id": "perechyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Peskovka"
+    ],
+    "correct": "Piskivka",
+    "id": "piskivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Primorsk"
+    ],
+    "correct": "Prymorsk",
+    "id": "prymorsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Privolie",
+      "Privolye"
+    ],
+    "correct": "Pryvillia",
+    "id": "pryvillia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rakitnoe",
+      "Rakytne"
+    ],
+    "correct": "Rokytne",
+    "id": "rokytne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Savintsy"
+    ],
+    "correct": "Savyntsi",
+    "id": "savyntsi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Selidove",
+      "Selidovo"
+    ],
+    "correct": "Selydove",
+    "id": "selydove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Schastie",
+      "Schastya",
+      "Schastye"
+    ],
+    "correct": "Shchastia",
+    "id": "shchastia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Shirokoe"
+    ],
+    "correct": "Shyroke",
+    "id": "shyroke",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Solonoe",
+      "Solyonoe"
+    ],
+    "correct": "Solone",
+    "id": "solone",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sosnovka"
+    ],
+    "correct": "Sosnivka",
+    "id": "sosnivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sosnitsa"
+    ],
+    "correct": "Sosnytsia",
+    "id": "sosnytsia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Svalyava"
+    ],
+    "correct": "Svaliava",
+    "id": "svaliava",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tarascha"
+    ],
+    "correct": "Tarashcha",
+    "id": "tarashcha",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tarutino"
+    ],
+    "correct": "Tarutyne",
+    "id": "tarutyne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ternovka"
+    ],
+    "correct": "Ternivka",
+    "id": "ternivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ternopol"
+    ],
+    "correct": "Ternopil",
+    "id": "ternopil",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Uzhgorod"
+    ],
+    "correct": "Uzhhorod",
+    "id": "uzhhorod",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vasilkov"
+    ],
+    "correct": "Vasylkiv",
+    "id": "vasylkiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vatutino"
+    ],
+    "correct": "Vatutine",
+    "id": "vatutine",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Veseloe",
+      "Veseloye"
+    ],
+    "correct": "Vesele",
+    "id": "vesele",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Olshany",
+      "Vilshani"
+    ],
+    "correct": "Vilshany",
+    "id": "vilshany",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vladimir"
+    ],
+    "correct": "Volodymyr",
+    "id": "volodymyr",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vyshkovo"
+    ],
+    "correct": "Vyshkove",
+    "id": "vyshkove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yuzhniy",
+      "Yuzhnoe",
+      "Yuzhnoye",
+      "Yuzhny"
+    ],
+    "correct": "Yuzhne",
+    "id": "yuzhne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zhashkov"
+    ],
+    "correct": "Zhashkiv",
+    "id": "zhashkiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zhitomyr",
+      "Zhytomir"
+    ],
+    "correct": "Zhytomyr",
+    "id": "zhytomyr",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zlatopol"
+    ],
+    "correct": "Zlatopil",
+    "id": "zlatopil",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Znamenka"
+    ],
+    "correct": "Znamianka",
+    "id": "znamianka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zolochev"
+    ],
+    "correct": "Zolochiv",
+    "id": "zolochiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zolotoe",
+      "Zolotoye"
+    ],
+    "correct": "Zolote",
+    "id": "zolote",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dmitri",
+      "Dmitro"
+    ],
+    "correct": "Dmytro",
+    "id": "dmytro",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Mihail",
+      "Mikhail"
+    ],
+    "correct": "Mykhailo",
+    "id": "mykhailo",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nikolai",
+      "Nikolay"
+    ],
+    "correct": "Mykola",
+    "id": "mykola",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Aleksey",
+      "Alexei",
+      "Alexey",
+      "Oleksiy",
+      "Olexiy"
+    ],
+    "correct": "Oleksii",
+    "id": "oleksii",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tatiana",
+      "Tatyana",
+      "Tetyana"
+    ],
+    "correct": "Tetiana",
+    "id": "tetiana",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Evgen",
+      "Evgeniy",
+      "Evgeny",
+      "Yevgen"
+    ],
+    "correct": "Yevhen",
+    "id": "yevhen",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ananiev"
+    ],
+    "correct": "Ananiv",
+    "id": "ananiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Boyarka"
+    ],
+    "correct": "Boiarka",
+    "id": "boiarka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bolgrad"
+    ],
+    "correct": "Bolhrad",
+    "id": "bolhrad",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Braclav"
+    ],
+    "correct": "Bratslav",
+    "id": "bratslav",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bryanka"
+    ],
+    "correct": "Brianka",
+    "id": "brianka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Brovari"
+    ],
+    "correct": "Brovary",
+    "id": "brovary",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chudnov"
+    ],
+    "correct": "Chudniv",
+    "id": "chudniv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Chuguev"
+    ],
+    "correct": "Chuhuiv",
+    "id": "chuhuiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Donbass"
+    ],
+    "correct": "Donbas",
+    "id": "donbas",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dubovoe"
+    ],
+    "correct": "Dubove",
+    "id": "dubove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dikanka"
+    ],
+    "correct": "Dykanka",
+    "id": "dykanka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorniak",
+      "Gornyak"
+    ],
+    "correct": "Hirnyk",
+    "id": "hirnyk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gluhov",
+      "Glukhov"
+    ],
+    "correct": "Hlukhiv",
+    "id": "hlukhiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorenka"
+    ],
+    "correct": "Horenka",
+    "id": "horenka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gorodok"
+    ],
+    "correct": "Horodok",
+    "id": "horodok",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Goronda"
+    ],
+    "correct": "Horonda",
+    "id": "horonda",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ivankov"
+    ],
+    "correct": "Ivankiv",
+    "id": "ivankiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Izmayil"
+    ],
+    "correct": "Izmail",
+    "id": "izmail",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kahovka"
+    ],
+    "correct": "Kakhovka",
+    "id": "kakhovka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Harkiv",
+      "Harkov",
+      "Kharkov"
+    ],
+    "correct": "Kharkiv",
+    "id": "kharkiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kolomea",
+      "Kolomia"
+    ],
+    "correct": "Kolomyia",
+    "id": "kolomyia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lanchin"
+    ],
+    "correct": "Lanchyn",
+    "id": "lanchyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lebedin"
+    ],
+    "correct": "Lebedyn",
+    "id": "lebedyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Luboml",
+      "Lyuboml"
+    ],
+    "correct": "Liuboml",
+    "id": "liuboml",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lugansk"
+    ],
+    "correct": "Luhansk",
+    "id": "luhansk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Makarov"
+    ],
+    "correct": "Makariv",
+    "id": "makariv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Morshin"
+    ],
+    "correct": "Morshyn",
+    "id": "morshyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nosovka"
+    ],
+    "correct": "Nosivka",
+    "id": "nosivka",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Obuhiv",
+      "Obukhov"
+    ],
+    "correct": "Obukhiv",
+    "id": "obukhiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ochakov"
+    ],
+    "correct": "Ochakiv",
+    "id": "ochakiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Orekhov"
+    ],
+    "correct": "Orikhiv",
+    "id": "orikhiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Otinya",
+      "Ottynia",
+      "Otyniya",
+      "Otynya"
+    ],
+    "correct": "Otyniia",
+    "id": "otyniia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ozernoe"
+    ],
+    "correct": "Ozerne",
+    "id": "ozerne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Podolsk"
+    ],
+    "correct": "Podilsk",
+    "id": "podilsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Priluki"
+    ],
+    "correct": "Pryluky",
+    "id": "pryluky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pripiat",
+      "Pripyat"
+    ],
+    "correct": "Prypyat",
+    "id": "prypyat",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rogatin",
+      "Rogatyn"
+    ],
+    "correct": "Rohatyn",
+    "id": "rohatyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Romanof",
+      "Romanov"
+    ],
+    "correct": "Romaniv",
+    "id": "romaniv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rovenki"
+    ],
+    "correct": "Rovenky",
+    "id": "rovenky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Slatino"
+    ],
+    "correct": "Slatyne",
+    "id": "slatyne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Snyatyn"
+    ],
+    "correct": "Sniatyn",
+    "id": "sniatyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sutiski"
+    ],
+    "correct": "Sutysky",
+    "id": "sutysky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Svatovo"
+    ],
+    "correct": "Svatove",
+    "id": "svatove",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Talnoye"
+    ],
+    "correct": "Talne",
+    "id": "talne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tiachev",
+      "Tyachev",
+      "Tyachiv"
+    ],
+    "correct": "Tiachiv",
+    "id": "tiachiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tovmach"
+    ],
+    "correct": "Tlumach",
+    "id": "tlumach",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tulchin"
+    ],
+    "correct": "Tulchyn",
+    "id": "tulchyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Turiysk"
+    ],
+    "correct": "Turiisk",
+    "id": "turiisk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vinniki"
+    ],
+    "correct": "Vynnyky",
+    "id": "vynnyky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yagotin",
+      "Yagotyn"
+    ],
+    "correct": "Yahotyn",
+    "id": "yahotyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yasinya"
+    ],
+    "correct": "Yasinia",
+    "id": "yasinia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yavorov"
+    ],
+    "correct": "Yavoriv",
+    "id": "yavoriv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zholkva"
+    ],
+    "correct": "Zhovkva",
+    "id": "zhovkva",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Andrei",
+      "Andrey",
+      "Andriy"
+    ],
+    "correct": "Andrii",
+    "id": "andrii",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Artyom"
+    ],
+    "correct": "Artem",
+    "id": "artem",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bogdan"
+    ],
+    "correct": "Bohdan",
+    "id": "bohdan",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Darina"
+    ],
+    "correct": "Daryna",
+    "id": "daryna",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Fedor",
+      "Phedir"
+    ],
+    "correct": "Fedir",
+    "id": "fedir",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Galina",
+      "Galyna",
+      "Halina"
+    ],
+    "correct": "Halyna",
+    "id": "halyna",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Maksim",
+      "Maxim"
+    ],
+    "correct": "Maksym",
+    "id": "maksym",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Maria",
+      "Mariya"
+    ],
+    "correct": "Mariia",
+    "id": "mariia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Marina"
+    ],
+    "correct": "Maryna",
+    "id": "maryna",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nikita"
+    ],
+    "correct": "Mykyta",
+    "id": "mykyta",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nadia",
+      "Nadiya",
+      "Nadya"
+    ],
+    "correct": "Nadiia",
+    "id": "nadiia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Alena",
+      "Alyona"
+    ],
+    "correct": "Olena",
+    "id": "olena",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Filip",
+      "Philip"
+    ],
+    "correct": "Pylyp",
+    "id": "pylyp",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sergey",
+      "Sergii",
+      "Sergiy",
+      "Serhiy"
+    ],
+    "correct": "Serhii",
+    "id": "serhii",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sofia",
+      "Sofiya"
+    ],
+    "correct": "Sofiia",
+    "id": "sofiia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Yuliya",
+      "Yulya"
+    ],
+    "correct": "Yuliia",
+    "id": "yuliia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Alusta"
+    ],
+    "correct": "Alushta",
+    "id": "alushta",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Bahmut"
+    ],
+    "correct": "Bakhmut",
+    "id": "bakhmut",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Belmak"
+    ],
+    "correct": "Bilmak",
+    "id": "bilmak",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Butcha"
+    ],
+    "correct": "Bucha",
+    "id": "bucha",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dolina"
+    ],
+    "correct": "Dolyna",
+    "id": "dolyna",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Drabov"
+    ],
+    "correct": "Drabiv",
+    "id": "drabiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Dymier"
+    ],
+    "correct": "Dymer",
+    "id": "dymer",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Jankoy"
+    ],
+    "correct": "Dzhankoi",
+    "id": "dzhankoi",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Fastov"
+    ],
+    "correct": "Fastiv",
+    "id": "fastiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Haysyn"
+    ],
+    "correct": "Haisyn",
+    "id": "haisyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Galich"
+    ],
+    "correct": "Halych",
+    "id": "halych",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gnivan"
+    ],
+    "correct": "Hnivan",
+    "id": "hnivan",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Goscha"
+    ],
+    "correct": "Hoshcha",
+    "id": "hoshcha",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Gurzuf"
+    ],
+    "correct": "Hurzuf",
+    "id": "hurzuf",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ichnya"
+    ],
+    "correct": "Ichnia",
+    "id": "ichnia",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kaluzh"
+    ],
+    "correct": "Kalush",
+    "id": "kalush",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Herson"
+    ],
+    "correct": "Kherson",
+    "id": "kherson",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Khotin"
+    ],
+    "correct": "Khotyn",
+    "id": "khotyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Nezhin",
+      "Nizhin"
+    ],
+    "correct": "Nizhyn",
+    "id": "nizhyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Odessa"
+    ],
+    "correct": "Odesa",
+    "id": "odesa",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ostior"
+    ],
+    "correct": "Oster",
+    "id": "oster",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Pologi",
+      "Pology",
+      "Polohi"
+    ],
+    "correct": "Polohy",
+    "id": "polohy",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Puliny"
+    ],
+    "correct": "Pulyny",
+    "id": "pulyny",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Putivl"
+    ],
+    "correct": "Putyvl",
+    "id": "putyvl",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rakhov"
+    ],
+    "correct": "Rakhiv",
+    "id": "rakhiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sambor"
+    ],
+    "correct": "Sambir",
+    "id": "sambir",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Skvira"
+    ],
+    "correct": "Skvyra",
+    "id": "skvyra",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Svessa"
+    ],
+    "correct": "Svesa",
+    "id": "svesa",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Teplik"
+    ],
+    "correct": "Teplyk",
+    "id": "teplyk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Tetiev"
+    ],
+    "correct": "Tetiiv",
+    "id": "tetiiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Turbov"
+    ],
+    "correct": "Turbiv",
+    "id": "turbiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Vorsel"
+    ],
+    "correct": "Vorzel",
+    "id": "vorzel",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zenkov"
+    ],
+    "correct": "Zinkiv",
+    "id": "zinkiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zmiev",
+      "Zmiyev"
+    ],
+    "correct": "Zmiiv",
+    "id": "zmiiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Daria",
+      "Darya"
+    ],
+    "correct": "Dariia",
+    "id": "dariia",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Denis"
+    ],
+    "correct": "Denys",
+    "id": "denys",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Ganna"
+    ],
+    "correct": "Hanna",
+    "id": "hanna",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Irina"
+    ],
+    "correct": "Iryna",
+    "id": "iryna",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Kiril"
+    ],
+    "correct": "Kyrylo",
+    "id": "kyrylo",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Oxana"
+    ],
+    "correct": "Oksana",
+    "id": "oksana",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Pavel"
+    ],
+    "correct": "Pavlo",
+    "id": "pavlo",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Vadim"
+    ],
+    "correct": "Vadym",
+    "id": "vadym",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Egor",
+      "Yegor"
+    ],
+    "correct": "Yehor",
+    "id": "yehor",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Yuriy"
+    ],
+    "correct": "Yurii",
+    "id": "yurii",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Irpen"
+    ],
+    "correct": "Irpin",
+    "id": "irpin",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Izum",
+      "Izyum"
+    ],
+    "correct": "Izium",
+    "id": "izium",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kanev"
+    ],
+    "correct": "Kaniv",
+    "id": "kaniv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kosov"
+    ],
+    "correct": "Kosiv",
+    "id": "kosiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Kiev",
+      "Kiyv",
+      "Kyyiv",
+      "Kyyv"
+    ],
+    "correct": "Kyiv",
+    "id": "kyiv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Litin"
+    ],
+    "correct": "Lityn",
+    "id": "lityn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Liman"
+    ],
+    "correct": "Lyman",
+    "id": "lyman",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Malin"
+    ],
+    "correct": "Malyn",
+    "id": "malyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ratno"
+    ],
+    "correct": "Ratne",
+    "id": "ratne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Rovno"
+    ],
+    "correct": "Rivne",
+    "id": "rivne",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Smela"
+    ],
+    "correct": "Smila",
+    "id": "smila",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Valki"
+    ],
+    "correct": "Valky",
+    "id": "valky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Ialta"
+    ],
+    "correct": "Yalta",
+    "id": "yalta",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Zarya",
+      "Zorya"
+    ],
+    "correct": "Zoria",
+    "id": "zoria",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Igor"
+    ],
+    "correct": "Ihor",
+    "id": "ihor",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Ilya"
+    ],
+    "correct": "Illia",
+    "id": "illia",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Oleg"
+    ],
+    "correct": "Oleh",
+    "id": "oleh",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Olga"
+    ],
+    "correct": "Olha",
+    "id": "olha",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Petr"
+    ],
+    "correct": "Petro",
+    "id": "petro",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Iana"
+    ],
+    "correct": "Yana",
+    "id": "yana",
+    "tags": [
+      "names"
+    ]
+  },
+  {
+    "wrong": [
+      "Hust"
+    ],
+    "correct": "Khust",
+    "id": "khust",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Luck"
+    ],
+    "correct": "Lutsk",
+    "id": "lutsk",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Lvov"
+    ],
+    "correct": "Lviv",
+    "id": "lviv",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Saki"
+    ],
+    "correct": "Saky",
+    "id": "saky",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Sumi",
+      "Symi"
+    ],
+    "correct": "Sumy",
+    "id": "sumy",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Uzin"
+    ],
+    "correct": "Uzyn",
+    "id": "uzyn",
+    "tags": [
+      "geo"
+    ]
+  },
+  {
+    "wrong": [
+      "Russia"
+    ],
+    "correct": "russia",
+    "id": "make-russia-small-again",
+    "exact": true,
+    "tags": [
+      "extra"
+    ]
+  },
+  {
+    "wrong": [
+      "Putin"
+    ],
+    "correct": "putin",
+    "id": "make-putin-small-again",
+    "exact": true,
+    "tags": [
+      "extra"
+    ]
+  }
+]
