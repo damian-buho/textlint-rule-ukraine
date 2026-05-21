@@ -1,6 +1,7 @@
 {
   "name": "textlint-rule-ukraine",
   "version": "1.0.1",
+  "type": "module",
   "description": "textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -3,10 +3,12 @@ import { describe, it } from "node:test";
 (globalThis as Record<string, unknown>).describe = describe;
 (globalThis as Record<string, unknown>).it = it;
 
-import TextLintTester from "textlint-tester";
+import { createRequire } from "node:module";
+const _required = createRequire(import.meta.url)("textlint-tester") as Record<string, unknown>;
+const TesterCtor = (_required.default ?? _required) as new () => { run: (...args: unknown[]) => void };
 import rule from "../lib/index.js";
 
-const tester = new TextLintTester();
+const tester = new TesterCtor();
 
 // --- geo (default) -----------------------------------------------------------
 

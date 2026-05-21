@@ -1,6 +1,6 @@
 import type { TextlintRuleModule } from "@textlint/types";
-import { loadDictionary, type Entry } from "./dictionary";
-import { preserveCase } from "./case-preserve";
+import { loadDictionary, type Entry } from "./dictionary.js";
+import { preserveCase } from "./case-preserve.js";
 
 export type Options = {
   // Geographic place names — enabled by default.
@@ -38,8 +38,8 @@ const matcherCache = new Map<string, ReturnType<typeof buildMatcher>>();
 const getMatcher = (enabledTags: string[]) => {
   const key = [...enabledTags].sort().join("|");
   if (!matcherCache.has(key)) {
-    const entries = loadDictionary().filter(e =>
-      e.tags.some(t => enabledTags.includes(t)),
+    const entries = loadDictionary().filter((e: Entry) =>
+      e.tags.some((t: string) => enabledTags.includes(t)),
     );
     matcherCache.set(key, buildMatcher(entries));
   }
