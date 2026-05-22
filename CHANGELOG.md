@@ -2,6 +2,23 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 1.1.1 - 2026-05-22
+#### Features
+- migrate to esm - (856a889) - Damián Búho
+#### Bug Fixes
+- unused variable in test - (6a70ea9) - Damián Búho
+#### Tests
+- add integration test - (12325ac) - Damián Búho
+#### Build system
+- (**typescript**) upgraded to ts6 - (5898a4b) - Damián Búho
+#### Miscellaneous Chores
+- (**cocogitto**) add bump hook - (98b2b8a) - Damián Búho
+- (**deps**) pin dependencies - (9e964e9) - Damián Búho
+- (**docs**) add some shields - (c60e78e) - Damián Búho
+- (**version**) 1.1.0 - (27830bb) - Damián Búho
+
+- - -
+
 ## 1.1.0 - 2026-05-22
 #### Features
 - migrate to esm - (856a889) - Damián Búho
