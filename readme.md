@@ -1,5 +1,11 @@
 # textlint-rule-ukraine
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
+![NPM Downloads](https://img.shields.io/npm/dm/textlint-rule-ukraine?style=flat-square)
+![NPM Version](https://img.shields.io/npm/v/textlint-rule-ukraine?style=flat-square)
+![NPM Last Update](https://img.shields.io/npm/last-update/textlint-rule-ukraine?style=flat-square)
+![npm bundle size](https://img.shields.io/bundlephobia/min/textlint-rule-ukraine?style=flat-square)
+![NPM License](https://img.shields.io/npm/l/textlint-rule-ukraine?style=flat-square)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 A [textlint](https://textlint.github.io/) rule that detects and fixes russified spellings of Ukrainian geographical and personal names.
 
@@ -50,10 +56,10 @@ Text inside fenced code blocks and inline backtick spans is never touched.
 
 The dictionary is split into tagged groups. `geo` is on by default; `names` and `extra` are opt-in.
 
-| Option  | Default | Covers |
-|---------|---------|--------|
-| `geo`   | `true`  | Place names (cities, regions, rivers) |
-| `names` | `false` | Personal names (first names, public figures) |
+| Option  | Default | Covers                                            |
+|---------|---------|---------------------------------------------------|
+| `geo`   | `true`  | Place names (cities, regions, rivers)             |
+| `names` | `false` | Personal names (first names, public figures)      |
 | `extra` | `false` | Opinionated corrections (e.g. lowercase *russia*) |
 
 To enable personal names checking:
