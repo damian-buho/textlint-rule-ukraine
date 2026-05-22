@@ -13,8 +13,7 @@ const PKG = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8")) as {
   devDependencies: Record<string, string>;
 };
 
-const packAndInstall = (workDir: string): string => {
-  // Pack current project into a tarball.
+const packAndInstall = (workDir: string): void => {
   const tarball = execSync("npm pack --silent", { cwd: ROOT, encoding: "utf8" }).trim();
   const tarballPath = join(ROOT, tarball);
   writeFileSync(
@@ -30,7 +29,6 @@ const packAndInstall = (workDir: string): string => {
     }, null, 2),
   );
   execSync("npm install --silent", { cwd: workDir, stdio: "pipe" });
-  return tarballPath;
 };
 
 const runTextlint = (workDir: string, text: string, options?: Record<string, unknown>): string => {
@@ -55,11 +53,10 @@ const runTextlint = (workDir: string, text: string, options?: Record<string, unk
 
 describe("integration — textlint loads ESM package", { concurrency: false }, () => {
   let workDir: string;
-  let tarballPath: string;
 
   it("setup: pack + install", () => {
     workDir = mkdtempSync(join(tmpdir(), "textlint-ukraine-int-"));
-    tarballPath = packAndInstall(workDir);
+    packAndInstall(workDir);
     assert.ok(existsSync(join(workDir, "node_modules", "textlint-rule-ukraine", "lib", "index.js")));
   });
 
