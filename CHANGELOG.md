@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 1.1.0 - 2026-05-22
+#### Features
+- migrate to esm - (856a889) - Damián Búho
+#### Tests
+- add integration test - (12325ac) - Damián Búho
+#### Miscellaneous Chores
+- (**cog**) add bump hook - (5ec1bca) - Damián Búho
+- (**docs**) add some shields - (c60e78e) - Damián Búho
+
+- - -
+
 ## 1.0.1 - 2026-05-15
 #### Bug Fixes
 - ua badge - (ad42517) - Damián Búho
