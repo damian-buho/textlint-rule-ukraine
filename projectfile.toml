@@ -1,0 +1,19 @@
+#:schema https://projectfile.org/schema/v1.json
+keywords = ['textlint', 'ukraine', 'spelling', 'transliteration']
+kind = 'SoftwareSourceCode'
+spec_version = '1'
+stack = ['node', 'typescript']
+
+[identity]
+name = 'textlint-rule-ukraine'
+namespace = 'me.damian-buho'
+summary = 'textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them'
+version = '1.1.1'
+
+[identity.urls]
+[identity.urls.repository]
+type = 'git'
+url = 'https://codeberg.org/damian-buho/textlint-rule-ukraine'
+
+[license]
+spdx = 'MIT'
