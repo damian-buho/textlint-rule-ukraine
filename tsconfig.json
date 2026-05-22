@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "es2025",
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "outDir": "lib",
+    "rootDir": "src",
     "declaration": true,
-    "strict": true,
-    "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],

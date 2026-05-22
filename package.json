@@ -37,6 +37,6 @@
     "@types/node": "25.9.1",
     "textlint": "15.7.1",
     "textlint-tester": "15.7.1",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   }
 }
