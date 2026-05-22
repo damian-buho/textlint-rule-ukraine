@@ -33,10 +33,10 @@
     "textlint": ">=13.0.0"
   },
   "devDependencies": {
-    "@textlint/types": "^15.7.0",
-    "@types/node": "^25.8.0",
-    "textlint": "^15.7.0",
-    "textlint-tester": "^15.7.0",
-    "typescript": "^5.8.3"
+    "@textlint/types": "15.7.1",
+    "@types/node": "25.9.1",
+    "textlint": "15.7.1",
+    "textlint-tester": "15.7.1",
+    "typescript": "5.9.3"
   }
 }
