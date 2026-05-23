@@ -9,11 +9,11 @@ message: Please cite this software using the metadata from this file.
 type: software
 title: ""
 abstract: textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them
-version: 1.1.1
+version: 1.1.2
 keywords:
-    - textlint
-    - ukraine
-    - spelling
-    - transliteration
+  - textlint
+  - ukraine
+  - spelling
+  - transliteration
 license: MIT
 repository-code: https://codeberg.org/damian-buho/textlint-rule-ukraine
