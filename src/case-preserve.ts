@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+//
+// SPDX-License-Identifier: MIT
+
 // Replace `replacement` text while preserving the casing style of `matched`.
 export const preserveCase = (matched: string, replacement: string): string => {
   if (matched === matched.toUpperCase()) {

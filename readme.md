@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+
+SPDX-License-Identifier: MIT
+-->
+
 # textlint-rule-ukraine
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 ![NPM Downloads](https://img.shields.io/npm/dm/textlint-rule-ukraine?style=flat-square)

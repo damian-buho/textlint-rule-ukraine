@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+//
+// SPDX-License-Identifier: MIT
+
 // Expose Node.js built-in test globals so textlint-tester can pick them up.
 import { describe, it } from "node:test";
 (globalThis as Record<string, unknown>).describe = describe;

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
 #:schema https://projectfile.org/schema/v1.json
 keywords = ['textlint', 'ukraine', 'spelling', 'transliteration']
 kind = 'SoftwareSourceCode'

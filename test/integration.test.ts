@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+//
+// SPDX-License-Identifier: MIT
+
 // Integration test: verify textlint can load our ESM package from disk
 // via its real rule-resolution pipeline (npm pack → install → textlint CLI).
 import { describe, it } from "node:test";

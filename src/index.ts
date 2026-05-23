@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+//
+// SPDX-License-Identifier: MIT
+
 import type { TextlintRuleModule } from "@textlint/types";
 import { loadDictionary, type Entry } from "./dictionary.js";
 import { preserveCase } from "./case-preserve.js";
