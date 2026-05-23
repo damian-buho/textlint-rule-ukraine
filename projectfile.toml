@@ -10,15 +10,23 @@ namespace = 'me.damian-buho'
 summary = 'textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them'
 version = '1.1.1'
 
+[identity.urls]
 [[identity.urls.repositories]]
+role = 'primary'
 type = 'git'
 url = 'https://codeberg.org/damian-buho/textlint-rule-ukraine'
-role = 'primary'
 
 [[identity.urls.repositories]]
+role = 'mirror'
 type = 'git'
 url = 'https://github.com/damian-buho/textlint-rule-ukraine'
-role = 'mirror'
 
 [license]
 spdx = 'MIT'
+
+[[links]]
+type = 'package-registry'
+url = 'https://www.npmjs.com/package/textlint-rule-ukraine'
+
+['org.projectfile.cli']
+derived = ['links[type=package-registry]']
