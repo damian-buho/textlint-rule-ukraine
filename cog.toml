@@ -10,7 +10,8 @@ pre = "alpha.*"
 skip_ci = "[skip ci]"
 skip_untracked = false
 pre_bump_hooks = [
-  "yq -i -o=json '.version = \"{{version}}\"' package.json"
+  "yq -i -o=json '.version = \"{{version}}\"' package.json",
+  "git tag {{version_tag}} {{version_tag}}^{} --force --sign --annotate --message='{{version}}'"
 ]
 post_bump_hooks = []
 pre_package_bump_hooks = []
