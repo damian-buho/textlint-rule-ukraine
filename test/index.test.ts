@@ -94,6 +94,44 @@ tester.run("extra — applies opinionated corrections", rule, {
 
 // --- geo: false --------------------------------------------------------------
 
+// --- Unicode-aware boundaries (Cyrillic) -------------------------------------
+
+tester.run("geo — flags Cyrillic wrong spellings", rule, {
+  valid: [
+    "Manevychi is a town in Volyn Oblast.",
+  ],
+  invalid: [
+    {
+      text: "переехал в Маневичи вчера",
+      output: "переехал в Manevychi вчера",
+      errors: [{ message: '"Маневичи" is a russified place name. Use the Ukrainian spelling "Manevychi" (manevychi).' }],
+    },
+    {
+      text: "МАНЕВИЧИ — town in Volyn.",
+      output: "MANEVYCHI — town in Volyn.",
+      errors: [{ message: '"МАНЕВИЧИ" is a russified place name. Use the Ukrainian spelling "MANEVYCHI" (manevychi).' }],
+    },
+    {
+      text: "маневичи is a small town.",
+      output: "manevychi is a small town.",
+      errors: [{ message: '"маневичи" is a russified place name. Use the Ukrainian spelling "manevychi" (manevychi).' }],
+    },
+  ],
+});
+
+// --- unicode boundaries don't match inside words ----------------------------
+
+tester.run("geo — unicode boundaries reject embedded matches", rule, {
+  valid: [
+    // The pattern must not match when the word is embedded in a larger word.
+    "theArtyomovskcity is not a match.",
+    "prefixМаневичиsuffix should not match.",
+  ],
+  invalid: [],
+});
+
+// --- geo: false --------------------------------------------------------------
+
 tester.run("geo: false — place names not checked", rule, {
   valid: [
     { text: "Artyomovsk is still there.", options: { geo: false } },

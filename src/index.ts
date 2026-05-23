@@ -13,7 +13,15 @@ export type Options = {
 
 const escape = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-const NEVER_MATCH = /(?!)/g;
+const NEVER_MATCH = /(?!)/gu;
+
+// Unicode-aware word boundary: matches where the adjacent char is NOT a
+// letter, digit, or underscore — equivalent to \b but works for Cyrillic,
+// CJK, and all Unicode scripts.  The `u` flag enables \p{} classes.
+const WB = {
+  open: "(?<![\\p{L}\\p{N}_])",
+  close: "(?![\\p{L}\\p{N}_])",
+};
 
 const buildMatcher = (entries: Entry[]) => {
   // Flatten to (wrongString → entry) for O(1) lookup during matching.
@@ -28,7 +36,7 @@ const buildMatcher = (entries: Entry[]) => {
   }
   // Sort longest-first in the alternation to prevent prefix shadowing.
   const allWrong = [...byLowerWrong.keys()].sort((a, b) => b.length - a.length);
-  const pattern = new RegExp(`\\b(?:${allWrong.map(escape).join("|")})\\b`, "gi");
+  const pattern = new RegExp(`${WB.open}(?:${allWrong.map(escape).join("|")})${WB.close}`, "giu");
   return { pattern, byLowerWrong };
 };
 
