@@ -5,6 +5,7 @@ SPDX-License-Identifier: MIT
 -->
 
 # textlint-rule-ukraine
+
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
 ![NPM Downloads](https://img.shields.io/npm/dm/textlint-rule-ukraine?style=flat-square)
 ![NPM Version](https://img.shields.io/npm/v/textlint-rule-ukraine?style=flat-square)
@@ -49,12 +50,12 @@ npx textlint --fix docs/**/*.md
 
 Replacements are case-preserving:
 
-| Input         | Output        |
-|---------------|---------------|
-| `Bahmut`      | `Bakhmut`     |
-| `BAHMUT`      | `BAKHMUT`     |
-| `bahmut`      | `bakhmut`     |
-| `Artyomovsk`  | `Artemivsk`   |
+| Input        | Output      |
+| ------------ | ----------- |
+| `Bahmut`     | `Bakhmut`   |
+| `BAHMUT`     | `BAKHMUT`   |
+| `bahmut`     | `bakhmut`   |
+| `Artyomovsk` | `Artemivsk` |
 
 Text inside fenced code blocks and inline backtick spans is never touched.
 
@@ -63,10 +64,10 @@ Text inside fenced code blocks and inline backtick spans is never touched.
 The dictionary is split into tagged groups. `geo` is on by default; `names` and `extra` are opt-in.
 
 | Option  | Default | Covers                                            |
-|---------|---------|---------------------------------------------------|
+| ------- | ------- | ------------------------------------------------- |
 | `geo`   | `true`  | Place names (cities, regions, rivers)             |
 | `names` | `false` | Personal names (first names, public figures)      |
-| `extra` | `false` | Opinionated corrections (e.g. lowercase *russia*) |
+| `extra` | `false` | Opinionated corrections (e.g. lowercase _russia_) |
 
 To enable personal names checking:
 

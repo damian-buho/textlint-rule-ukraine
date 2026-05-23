@@ -22,15 +22,19 @@ const packAndInstall = (workDir: string): void => {
   const tarballPath = join(ROOT, tarball);
   writeFileSync(
     join(workDir, "package.json"),
-    JSON.stringify({
-      name: "integration-test-consumer",
-      private: true,
-      type: "module",
-      dependencies: {
-        textlint: PKG.devDependencies["textlint"] ?? "latest",
-        "textlint-rule-ukraine": `file:${tarballPath}`,
+    JSON.stringify(
+      {
+        name: "integration-test-consumer",
+        private: true,
+        type: "module",
+        dependencies: {
+          textlint: PKG.devDependencies["textlint"] ?? "latest",
+          "textlint-rule-ukraine": `file:${tarballPath}`,
+        },
       },
-    }, null, 2),
+      null,
+      2,
+    ),
   );
   execSync("npm install --silent", { cwd: workDir, stdio: "pipe" });
 };
@@ -61,7 +65,9 @@ describe("integration — textlint loads ESM package", { concurrency: false }, (
   it("setup: pack + install", () => {
     workDir = mkdtempSync(join(tmpdir(), "textlint-ukraine-int-"));
     packAndInstall(workDir);
-    assert.ok(existsSync(join(workDir, "node_modules", "textlint-rule-ukraine", "lib", "index.js")));
+    assert.ok(
+      existsSync(join(workDir, "node_modules", "textlint-rule-ukraine", "lib", "index.js")),
+    );
   });
 
   it("flags russified place name", () => {
@@ -90,7 +96,12 @@ describe("integration — textlint loads ESM package", { concurrency: false }, (
         stdio: ["pipe", "pipe", "pipe"],
       });
     } catch (err: unknown) {
-      if (err && typeof err === "object" && "status" in err && (err as { status: number }).status !== 1) {
+      if (
+        err &&
+        typeof err === "object" &&
+        "status" in err &&
+        (err as { status: number }).status !== 1
+      ) {
         throw err;
       }
     }
@@ -102,8 +113,15 @@ describe("integration — textlint loads ESM package", { concurrency: false }, (
       stdio: ["pipe", "pipe", "pipe"],
     });
     const messages = JSON.parse(out2);
-    const totalErrors = messages.reduce((sum: number, f: { messages: unknown[] }) => sum + f.messages.length, 0);
-    assert.equal(totalErrors, 0, `expected no lint errors after fix, got: ${JSON.stringify(messages)}, file content: ${fixed}`);
+    const totalErrors = messages.reduce(
+      (sum: number, f: { messages: unknown[] }) => sum + f.messages.length,
+      0,
+    );
+    assert.equal(
+      totalErrors,
+      0,
+      `expected no lint errors after fix, got: ${JSON.stringify(messages)}, file content: ${fixed}`,
+    );
   });
 
   it("cleanup", () => {

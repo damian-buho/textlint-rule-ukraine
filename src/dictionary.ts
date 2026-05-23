@@ -19,7 +19,9 @@ let cached: Entry[] | null = null;
 // lib/ sits one level above data/ — works both locally and in the published package.
 export const loadDictionary = (): Entry[] => {
   if (!cached) {
-    cached = JSON.parse(readFileSync(join(import.meta.dirname, "..", "data", "dictionary.json"), "utf8")) as Entry[];
+    cached = JSON.parse(
+      readFileSync(join(import.meta.dirname, "..", "data", "dictionary.json"), "utf8"),
+    ) as Entry[];
   }
   return cached;
 };

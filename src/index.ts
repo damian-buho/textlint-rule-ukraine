@@ -98,10 +98,10 @@ const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
         const end = start + wrong.length;
         report(
           node,
-          new RuleError(
-            buildMessage(wrong, replacement, entry),
-            { index: start, fix: fixer.replaceTextRange([start, end], replacement) },
-          ),
+          new RuleError(buildMessage(wrong, replacement, entry), {
+            index: start,
+            fix: fixer.replaceTextRange([start, end], replacement),
+          }),
         );
       }
     },

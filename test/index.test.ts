@@ -9,7 +9,9 @@ import { describe, it } from "node:test";
 
 import { createRequire } from "node:module";
 const _required = createRequire(import.meta.url)("textlint-tester") as Record<string, unknown>;
-const TesterCtor = (_required.default ?? _required) as new () => { run: (...args: unknown[]) => void };
+const TesterCtor = (_required.default ?? _required) as new () => {
+  run: (...args: unknown[]) => void;
+};
 import rule from "../lib/index.js";
 
 const tester = new TesterCtor();
@@ -28,22 +30,42 @@ tester.run("geo — flags russified place names", rule, {
     {
       text: "Artyomovsk is a city in Luhansk Oblast.",
       output: "Artemivsk is a city in Luhansk Oblast.",
-      errors: [{ message: '"Artyomovsk" is a russified place name. Use the Ukrainian spelling "Artemivsk" (artemivsk).' }],
+      errors: [
+        {
+          message:
+            '"Artyomovsk" is a russified place name. Use the Ukrainian spelling "Artemivsk" (artemivsk).',
+        },
+      ],
     },
     {
       text: "ARTYOMOVSK is on the map.",
       output: "ARTEMIVSK is on the map.",
-      errors: [{ message: '"ARTYOMOVSK" is a russified place name. Use the Ukrainian spelling "ARTEMIVSK" (artemivsk).' }],
+      errors: [
+        {
+          message:
+            '"ARTYOMOVSK" is a russified place name. Use the Ukrainian spelling "ARTEMIVSK" (artemivsk).',
+        },
+      ],
     },
     {
       text: "Spelled artyomovsk wrong.",
       output: "Spelled artemivsk wrong.",
-      errors: [{ message: '"artyomovsk" is a russified place name. Use the Ukrainian spelling "artemivsk" (artemivsk).' }],
+      errors: [
+        {
+          message:
+            '"artyomovsk" is a russified place name. Use the Ukrainian spelling "artemivsk" (artemivsk).',
+        },
+      ],
     },
     {
       text: "Bahmut is a city in Ukraine.",
       output: "Bakhmut is a city in Ukraine.",
-      errors: [{ message: '"Bahmut" is a russified place name. Use the Ukrainian spelling "Bakhmut" (bakhmut).' }],
+      errors: [
+        {
+          message:
+            '"Bahmut" is a russified place name. Use the Ukrainian spelling "Bakhmut" (bakhmut).',
+        },
+      ],
     },
   ],
 });
@@ -59,15 +81,15 @@ tester.run("names — not checked unless names: true", rule, {
 });
 
 tester.run("names — flags russified personal names", rule, {
-  valid: [
-    { text: "Oleh signed the document.", options: { names: true } },
-  ],
+  valid: [{ text: "Oleh signed the document.", options: { names: true } }],
   invalid: [
     {
       text: "Oleg signed the document.",
       output: "Oleh signed the document.",
       options: { names: true },
-      errors: [{ message: '"Oleg" is a russified personal name. Use the Ukrainian form "Oleh" (oleh).' }],
+      errors: [
+        { message: '"Oleg" is a russified personal name. Use the Ukrainian form "Oleh" (oleh).' },
+      ],
     },
   ],
 });
@@ -83,9 +105,7 @@ tester.run("extra — not checked unless extra: true", rule, {
 });
 
 tester.run("extra — applies opinionated corrections", rule, {
-  valid: [
-    { text: "russia invaded Ukraine.", options: { extra: true } },
-  ],
+  valid: [{ text: "russia invaded Ukraine.", options: { extra: true } }],
   invalid: [
     {
       text: "Russia invaded Ukraine.",
@@ -101,24 +121,37 @@ tester.run("extra — applies opinionated corrections", rule, {
 // --- Unicode-aware boundaries (Cyrillic) -------------------------------------
 
 tester.run("geo — flags Cyrillic wrong spellings", rule, {
-  valid: [
-    "Manevychi is a town in Volyn Oblast.",
-  ],
+  valid: ["Manevychi is a town in Volyn Oblast."],
   invalid: [
     {
       text: "переехал в Маневичи вчера",
       output: "переехал в Manevychi вчера",
-      errors: [{ message: '"Маневичи" is a russified place name. Use the Ukrainian spelling "Manevychi" (manevychi).' }],
+      errors: [
+        {
+          message:
+            '"Маневичи" is a russified place name. Use the Ukrainian spelling "Manevychi" (manevychi).',
+        },
+      ],
     },
     {
       text: "МАНЕВИЧИ — town in Volyn.",
       output: "MANEVYCHI — town in Volyn.",
-      errors: [{ message: '"МАНЕВИЧИ" is a russified place name. Use the Ukrainian spelling "MANEVYCHI" (manevychi).' }],
+      errors: [
+        {
+          message:
+            '"МАНЕВИЧИ" is a russified place name. Use the Ukrainian spelling "MANEVYCHI" (manevychi).',
+        },
+      ],
     },
     {
       text: "маневичи is a small town.",
       output: "manevychi is a small town.",
-      errors: [{ message: '"маневичи" is a russified place name. Use the Ukrainian spelling "manevychi" (manevychi).' }],
+      errors: [
+        {
+          message:
+            '"маневичи" is a russified place name. Use the Ukrainian spelling "manevychi" (manevychi).',
+        },
+      ],
     },
   ],
 });
@@ -137,8 +170,6 @@ tester.run("geo — unicode boundaries reject embedded matches", rule, {
 // --- geo: false --------------------------------------------------------------
 
 tester.run("geo: false — place names not checked", rule, {
-  valid: [
-    { text: "Artyomovsk is still there.", options: { geo: false } },
-  ],
+  valid: [{ text: "Artyomovsk is still there.", options: { geo: false } }],
   invalid: [],
 });
