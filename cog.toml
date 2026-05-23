@@ -15,6 +15,7 @@ skip_ci = "[skip ci]"
 skip_untracked = false
 pre_bump_hooks = [
   "yq -i -o=json '.version = \"{{version}}\"' package.json",
+  "yq -i -o=yaml '.version = \"{{version}}\"' CITATION.cff",
 ]
 post_bump_hooks = [
   "git tag {{version_tag}} {{version_tag}}^{} --force --sign --annotate --message='{{version}}'"
