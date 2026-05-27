@@ -14,6 +14,9 @@ SPDX-License-Identifier: MIT
 ![NPM License](https://img.shields.io/npm/l/textlint-rule-ukraine?style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
+[![Known Vulnerabilities](https://snyk.io/test/npm/textlint-rule-ukraine/badge.svg)](https://snyk.io/test/npm/textlint-rule-ukraine)
+
+
 A [textlint](https://textlint.github.io/) rule that detects and fixes russified spellings of Ukrainian geographical and personal names.
 
 The corrections database is sourced from the [SpellingUkraine](https://github.com/Tyrrrz/SpellingUkraine) project (MIT) and other sources.
