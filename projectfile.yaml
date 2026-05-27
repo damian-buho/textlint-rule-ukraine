@@ -1,0 +1,65 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+---
+$schema: https://projectfile.org/schema/v1.json
+dependencies:
+  build:
+    - pkg:npm/typescript@6.0.3
+    - pkg:npm/@textlint/types@15.7.1
+    - pkg:npm/@types/node@25.9.1
+    - pkg:npm/textlint@15.7.1
+    - pkg:npm/textlint-tester@15.7.1
+identity:
+  created: "2026-05-15"
+  name: textlint-rule-ukraine
+  namespace: me.dbuho
+  summary: textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them
+  title: textlint-rule-ukraine
+  version: 1.1.2
+keywords:
+  - textlint
+  - ukraine
+  - spelling
+  - transliteration
+kind: SoftwareSourceCode
+license:
+  spdx: MIT
+links:
+  - type: source-code
+    url: https://codeberg.org/damian-buho/textlint-rule-ukraine
+  - type: source-code
+    url: https://github.com/damian-buho/textlint-rule-ukraine
+  - type: bugs
+    url: https://codeberg.org/damian-buho/textlint-rule-ukraine/issues
+  - type: bugs
+    url: https://github.com/damian-buho/textlint-rule-ukraine/issues
+  - type: package-registry
+    url: https://www.npmjs.com/package/textlint-rule-ukraine
+org:
+  projectfile:
+    cli:
+      derived:
+        - links[type=bugs,url=https://codeberg.org/damian-buho/textlint-rule-ukraine/issues]
+        - links[type=bugs,url=https://github.com/damian-buho/textlint-rule-ukraine/issues]
+        - links[type=package-registry]
+people:
+  - email: damian.buho@proton.me
+    family-names: Búho
+    given-names: Damián
+    name: Damián Búho
+    orcid: 0009-0004-8579-7633
+    roles:
+      - author
+      - security
+      - maintainer
+      - contact
+    url: https://dbuho.me
+repositories:
+  - primary: true
+    type: git
+    url: https://codeberg.org/damian-buho/textlint-rule-ukraine
+stack:
+  - node
+  - typescript
