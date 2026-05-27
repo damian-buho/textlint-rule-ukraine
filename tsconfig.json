@@ -3,12 +3,12 @@
     "target": "es2025",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "outDir": "lib",
+    "outDir": "dist/lib",
     "rootDir": "src",
     "declaration": true,
     "skipLibCheck": true,
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "lib", "test"]
+  "exclude": ["node_modules", "dist", "tests"]
 }

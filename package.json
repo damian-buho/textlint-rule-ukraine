@@ -3,24 +3,26 @@
   "version": "1.1.2",
   "type": "module",
   "description": "textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
   "files": [
-    "lib/",
+    "dist/lib/",
     "data/"
   ],
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
-    "clean": "rm -rf lib",
+    "clean": "rm -rf dist",
     "build": "npm run clean && tsc",
-    "test": "npm run build && tsc --project tsconfig.test.json && node --test 'test-dist/**/*.test.js'",
+    "test": "npm run build && tsc --project tsconfig.test.json && node --test 'dist/test/**/*.test.js'",
+    "test:verbose": "npm run build && tsc --project tsconfig.test.json && node --test --test-reporter spec 'dist/test/**/*.test.js'",
+    "test:coverage": "npm run build && tsc --project tsconfig.test.json && node --test --experimental-test-coverage 'dist/test/**/*.test.js'",
     "prepublishOnly": "npm run build",
     "lint": "eslint ./",
     "fix": "eslint ./ --fix",
-    "format": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
-    "format:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'"
+    "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts' 'data/**/*.json'",
+    "format:check": "prettier --check 'src/**/*.ts' 'tests/**/*.ts' 'data/**/*.json'"
   },
   "keywords": [
     "textlint",

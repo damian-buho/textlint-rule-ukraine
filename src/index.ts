@@ -15,7 +15,7 @@ export type Options = {
   extra?: boolean;
 };
 
-const escape = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const escape = (s: string): string => s.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
 
 const NEVER_MATCH = /(?!)/gu;
 
@@ -23,8 +23,8 @@ const NEVER_MATCH = /(?!)/gu;
 // letter, digit, or underscore — equivalent to \b but works for Cyrillic,
 // CJK, and all Unicode scripts.  The `u` flag enables \p{} classes.
 const WB = {
-  open: "(?<![\\p{L}\\p{N}_])",
-  close: "(?![\\p{L}\\p{N}_])",
+  open: String.raw`(?<![\p{L}\p{N}_])`,
+  close: String.raw`(?![\p{L}\p{N}_])`,
 };
 
 const buildMatcher = (entries: Entry[]) => {
@@ -39,8 +39,11 @@ const buildMatcher = (entries: Entry[]) => {
     return { pattern: NEVER_MATCH, byLowerWrong };
   }
   // Sort longest-first in the alternation to prevent prefix shadowing.
-  const allWrong = [...byLowerWrong.keys()].sort((a, b) => b.length - a.length);
-  const pattern = new RegExp(`${WB.open}(?:${allWrong.map(escape).join("|")})${WB.close}`, "giu");
+  const allWrong = [...byLowerWrong.keys()].toSorted((a, b) => b.length - a.length);
+  const pattern = new RegExp(
+    `${WB.open}(?:${allWrong.map((s) => escape(s)).join("|")})${WB.close}`,
+    "giu",
+  );
   return { pattern, byLowerWrong };
 };
 
@@ -48,10 +51,10 @@ const buildMatcher = (entries: Entry[]) => {
 const matcherCache = new Map<string, ReturnType<typeof buildMatcher>>();
 
 const getMatcher = (enabledTags: string[]) => {
-  const key = [...enabledTags].sort().join("|");
+  const key = [...enabledTags].toSorted().join("|");
   if (!matcherCache.has(key)) {
-    const entries = loadDictionary().filter((e: Entry) =>
-      e.tags.some((t: string) => enabledTags.includes(t)),
+    const entries = loadDictionary().filter((entry: Entry) =>
+      entry.tags.some((tag: string) => enabledTags.includes(tag)),
     );
     matcherCache.set(key, buildMatcher(entries));
   }

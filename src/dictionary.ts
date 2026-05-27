@@ -2,8 +2,8 @@
 //
 // SPDX-License-Identifier: MIT
 
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 
 export type Entry = {
   wrong: string[];
@@ -14,14 +14,23 @@ export type Entry = {
   exact?: boolean;
 };
 
-let cached: Entry[] | null = null;
+let cached: Entry[] | undefined;
 
-// lib/ sits one level above data/ — works both locally and in the published package.
+// Walk upward for the data/ sibling — handles published (dist/lib → up 2),
+// dev build (dist/lib → up 2), and test compile (dist/test/src → up 3).
+const findDictionaryPath = (): string => {
+  let directory = import.meta.dirname;
+  while (directory !== path.dirname(directory)) {
+    const candidate = path.join(directory, "data", "dictionary.json");
+    if (existsSync(candidate)) return candidate;
+    directory = path.dirname(directory);
+  }
+  throw new Error("data/dictionary.json not found in any ancestor of " + import.meta.dirname);
+};
+
 export const loadDictionary = (): Entry[] => {
-  if (!cached) {
-    cached = JSON.parse(
-      readFileSync(join(import.meta.dirname, "..", "data", "dictionary.json"), "utf8"),
-    ) as Entry[];
+  if (cached === undefined) {
+    cached = JSON.parse(readFileSync(findDictionaryPath(), "utf8")) as Entry[];
   }
   return cached;
 };

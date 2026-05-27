@@ -10,9 +10,9 @@ import { describe, it } from "node:test";
 import { createRequire } from "node:module";
 const _required = createRequire(import.meta.url)("textlint-tester") as Record<string, unknown>;
 const TesterCtor = (_required.default ?? _required) as new () => {
-  run: (...args: unknown[]) => void;
+  run: (...arguments_: unknown[]) => void;
 };
-import rule from "../lib/index.js";
+import rule from "../src/index.js";
 
 const tester = new TesterCtor();
 

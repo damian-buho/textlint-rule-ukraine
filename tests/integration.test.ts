@@ -8,20 +8,20 @@ import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { execSync } from "node:child_process";
 import { mkdtempSync, writeFileSync, rmSync, existsSync, readFileSync } from "node:fs";
-import { join } from "node:path";
+import path from "node:path";
 import { tmpdir } from "node:os";
 
-const ROOT = join(import.meta.dirname, "..");
-const PKG = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8")) as {
+const ROOT = process.cwd();
+const PKG = JSON.parse(readFileSync(path.join(ROOT, "package.json"), "utf8")) as {
   version: string;
   devDependencies: Record<string, string>;
 };
 
-const packAndInstall = (workDir: string): void => {
+const packAndInstall = (workDirectory: string): void => {
   const tarball = execSync("npm pack --silent", { cwd: ROOT, encoding: "utf8" }).trim();
-  const tarballPath = join(ROOT, tarball);
+  const tarballPath = path.join(ROOT, tarball);
   writeFileSync(
-    join(workDir, "package.json"),
+    path.join(workDirectory, "package.json"),
     JSON.stringify(
       {
         name: "integration-test-consumer",
@@ -32,83 +32,99 @@ const packAndInstall = (workDir: string): void => {
           "textlint-rule-ukraine": `file:${tarballPath}`,
         },
       },
-      null,
+      undefined,
       2,
     ),
   );
-  execSync("npm install --silent", { cwd: workDir, stdio: "pipe" });
+  execSync("npm install --silent", { cwd: workDirectory, stdio: "pipe" });
 };
 
-const runTextlint = (workDir: string, text: string, options?: Record<string, unknown>): string => {
+const runTextlint = (
+  workDirectory: string,
+  text: string,
+  options?: Record<string, unknown>,
+): string => {
   const rules = { "textlint-rule-ukraine": options ?? true };
-  writeFileSync(join(workDir, ".textlintrc.json"), JSON.stringify({ rules }, null, 2));
-  writeFileSync(join(workDir, "doc.md"), text);
+  writeFileSync(
+    path.join(workDirectory, ".textlintrc.json"),
+    JSON.stringify({ rules }, undefined, 2),
+  );
+  writeFileSync(path.join(workDirectory, "doc.md"), text);
   try {
     const out = execSync("npx textlint --format json doc.md", {
-      cwd: workDir,
+      cwd: workDirectory,
       encoding: "utf8",
       stdio: ["pipe", "pipe", "pipe"],
     });
     return out;
-  } catch (err: unknown) {
+  } catch (error: unknown) {
     // textlint exits non-zero when lint errors found — output is in stdout.
-    if (err && typeof err === "object" && "stdout" in err) {
-      return (err as { stdout: string }).stdout;
+    if (error && typeof error === "object" && "stdout" in error) {
+      return (error as { stdout: string }).stdout;
     }
-    throw err;
+    throw error;
   }
 };
 
 describe("integration — textlint loads ESM package", { concurrency: false }, () => {
-  let workDir: string;
+  let workDirectory: string;
 
   it("setup: pack + install", () => {
-    workDir = mkdtempSync(join(tmpdir(), "textlint-ukraine-int-"));
-    packAndInstall(workDir);
+    workDirectory = mkdtempSync(path.join(tmpdir(), "textlint-ukraine-int-"));
+    packAndInstall(workDirectory);
     assert.ok(
-      existsSync(join(workDir, "node_modules", "textlint-rule-ukraine", "lib", "index.js")),
+      existsSync(
+        path.join(
+          workDirectory,
+          "node_modules",
+          "textlint-rule-ukraine",
+          "dist",
+          "lib",
+          "index.js",
+        ),
+      ),
     );
   });
 
   it("flags russified place name", () => {
-    const out = runTextlint(workDir, "Artyomovsk is a city.");
+    const out = runTextlint(workDirectory, "Artyomovsk is a city.");
     const messages = JSON.parse(out);
-    const msg = messages[0]?.messages?.[0];
-    assert.ok(msg, "expected at least one lint message");
-    assert.match(msg.message, /Artyomovsk.*Artemivsk/);
+    const message = messages[0]?.messages?.[0];
+    assert.ok(message, "expected at least one lint message");
+    assert.match(message.message, /Artyomovsk.*Artemivsk/);
   });
 
   it("flags russified personal name with names option", () => {
-    const out = runTextlint(workDir, "Oleg signed the document.", { names: true });
+    const out = runTextlint(workDirectory, "Oleg signed the document.", { names: true });
     const messages = JSON.parse(out);
-    const msg = messages[0]?.messages?.[0];
-    assert.ok(msg, "expected at least one lint message");
-    assert.match(msg.message, /Oleg.*Oleh/);
+    const message = messages[0]?.messages?.[0];
+    assert.ok(message, "expected at least one lint message");
+    assert.match(message.message, /Oleg.*Oleh/);
   });
 
   it("auto-fixes to correct spelling", () => {
     // Set up a fresh document to fix.
-    runTextlint(workDir, "Artyomovsk is a city.");
+    runTextlint(workDirectory, "Artyomovsk is a city.");
     try {
       execSync("npx textlint --fix doc.md", {
-        cwd: workDir,
+        cwd: workDirectory,
         encoding: "utf8",
         stdio: ["pipe", "pipe", "pipe"],
       });
-    } catch (err: unknown) {
+    } catch (error: unknown) {
       if (
-        err &&
-        typeof err === "object" &&
-        "status" in err &&
-        (err as { status: number }).status !== 1
+        error &&
+        typeof error === "object" &&
+        "status" in error &&
+        (error as { status: number }).status !== 1
       ) {
-        throw err;
+        throw error;
       }
     }
     // Read the fixed file to confirm the fix was applied.
-    const fixed = execSync("cat doc.md", { cwd: workDir, encoding: "utf8" });
+    const fixed = execSync("cat doc.md", { cwd: workDirectory, encoding: "utf8" });
     const out2 = execSync("npx textlint --format json doc.md", {
-      cwd: workDir,
+      cwd: workDirectory,
       encoding: "utf8",
       stdio: ["pipe", "pipe", "pipe"],
     });
@@ -125,8 +141,8 @@ describe("integration — textlint loads ESM package", { concurrency: false }, (
   });
 
   it("cleanup", () => {
-    rmSync(workDir, { recursive: true, force: true });
-    const tarball = join(ROOT, `textlint-rule-ukraine-${PKG.version}.tgz`);
+    rmSync(workDirectory, { recursive: true, force: true });
+    const tarball = path.join(ROOT, `textlint-rule-ukraine-${PKG.version}.tgz`);
     if (existsSync(tarball)) rmSync(tarball);
   });
 });
