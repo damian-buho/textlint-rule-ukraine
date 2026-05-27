@@ -1,0 +1,132 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+name: Release
+# Fires when Pipeline finishes successfully and a git tag points to the head
+# commit. Publishes to npm via OIDC trusted publishing.
+#
+# To release: push a tag.
+#   git tag vX.Y.Z && git push origin vX.Y.Z
+# Pipeline runs on the tag push; its success triggers this workflow; the gate
+# finds the tag at HEAD; publish-npm publishes.
+#
+# There is no workflow_dispatch path — tag creation IS the release operation.
+#
+# Note: workflow_run-triggered workflows always run the version of this file
+# from the default branch. To roll out a change to Release, merge to main first.
+#
+# One-time setup required: configure trusted publisher on npmjs.com pointing
+# at this repo + this workflow filename. Until that is done, publish-npm will
+# fail loudly with an OIDC error — that's expected.
+
+on:
+  workflow_run:
+    workflows: [Pipeline]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  # workflow_run carries no meaningful github.ref — key on the underlying
+  # head_sha so two pipeline runs for the same SHA (branch push + tag push)
+  # serialize. Never cancel; the gate dedups any duplicate trigger.
+  group: release-${{ github.event.workflow_run.head_sha }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    # Two-fact gate: Pipeline must have succeeded for a push event, and the
+    # head SHA must carry a tag we haven't already released. Either fails →
+    # publish-npm no-ops via `if: needs.gate.outputs.tag != ''`.
+    name: Gate
+    runs-on: ubuntu-24.04
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
+    permissions:
+      contents: read
+    outputs:
+      tag: ${{ steps.gate.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref:          ${{ github.event.workflow_run.head_sha }}
+          fetch-depth:  0
+
+      - id:   gate
+        name: Resolve tag at HEAD (and dedup)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Tagged commits typically produce TWO Pipeline runs (branch push +
+        # tag push), each firing Release. We dedup by skipping if a GitHub
+        # release for this tag already exists from the first run.
+        run: |
+          set -euo pipefail
+          tag=$(git tag --points-at HEAD | head -n1)
+          if [ -z "${tag}" ]; then
+            echo "No tag at $(git rev-parse HEAD) — Pipeline succeeded but nothing to release."
+            echo "tag=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if gh release view "${tag}" --json tagName >/dev/null 2>&1; then
+            echo "GitHub release ${tag} already exists — duplicate trigger ignored."
+            echo "tag=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "Releasing ${tag} at $(git rev-parse HEAD)"
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+
+  publish-npm:
+    name: Publish npm + GitHub release
+    needs: gate
+    if:    needs.gate.outputs.tag != ''
+    runs-on: ubuntu-24.04
+    permissions:
+      contents:  write  # GitHub release creation + floating tag push
+      id-token:  write  # OIDC for npm provenance
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref:          ${{ github.event.workflow_run.head_sha }}
+          fetch-depth:  0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version:  '24'  # npm 11.5+ ships here; trusted publishing requires it
+          registry-url:  https://registry.npmjs.org
+          cache:         npm
+
+      - run: npm ci
+
+      # prepublishOnly runs the build, so no explicit build step is needed.
+      - name: Publish to npm
+        run:  npm publish --provenance --access public
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name:               ${{ needs.gate.outputs.tag }}
+          generate_release_notes: true
+
+      # Floating tags let consumers pin `@v1` / `@v1.2` and keep receiving
+      # patch updates. Pushed with GITHUB_TOKEN so the tag push does not
+      # retrigger Pipeline → no Release loop.
+      - name: Update floating major/minor tags
+        env:
+          VERSION: ${{ needs.gate.outputs.tag }}
+        run: |
+          set -euo pipefail
+          v="${VERSION#v}"
+          if ! [[ "$v" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
+            echo "Skipping floating tags — '${VERSION}' is not a clean semver (pre-release or build metadata)"
+            exit 0
+          fi
+          major="v${BASH_REMATCH[1]}"
+          minor="v${BASH_REMATCH[1]}.${BASH_REMATCH[2]}"
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for floating in "${major}" "${minor}"; do
+            echo "Moving ${floating} → $(git rev-parse HEAD)"
+            git tag --force --annotate "${floating}" --message "Floating tag for ${VERSION}"
+            git push --force origin "refs/tags/${floating}"
+          done
