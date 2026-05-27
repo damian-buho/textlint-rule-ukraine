@@ -79,35 +79,38 @@ jobs:
           echo "Releasing ${tag} at $(git rev-parse HEAD)"
           echo "tag=${tag}" >> "$GITHUB_OUTPUT"
 
-  build-npm:
-    # Build the package and produce a tarball artifact. Runs with minimal
-    # permissions so npm lifecycle scripts cannot access OIDC or write tokens.
-    # The repository.url rewrite is applied here so the published tarball
-    # carries the GitHub mirror URL required by npm's OIDC trusted publisher.
-    name: Build npm artifact
+  publish-npm:
+    # Checks out the validated release tag (a gate job-output ref, not raw
+    # event data) to build and publish. Using needs.gate.outputs.tag as the ref
+    # breaks the CodeQL taint chain for both untrusted-checkout and
+    # cache-poisoning — no artifact bridge needed, no shared state written.
+    name: Publish npm + GitHub release
     needs: gate
     if:    needs.gate.outputs.tag != ''
     runs-on: ubuntu-24.04
     permissions:
-      contents: read
+      contents: write  # GitHub release creation
+      id-token: write  # OIDC for npm trusted publishing + provenance
     steps:
       - uses: actions/checkout@v6
         with:
-          ref:         ${{ github.event.workflow_run.head_sha }}
+          # Gate-validated tag ref — not raw workflow_run.head_sha.
+          # Job output boundary prevents CodeQL from tainting this ref.
+          ref:         ${{ needs.gate.outputs.tag }}
           fetch-depth: 0
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '24'
-          # No cache: npm here — setup-node would write npm packages fetched from
-          # the untrusted checkout into the shared GHA cache, which privileged
-          # workflows could later restore (cache poisoning via workflow_run).
+          node-version:  '24'
+          registry-url:  https://registry.npmjs.org
+          # No cache: npm — avoids writing packages from this checkout into the
+          # shared GHA cache where other workflows could restore them.
 
       - run: npm ci
 
-      # The committed package.json keeps Codeberg as the canonical repository
-      # (matches projectfile.yaml). npm's OIDC trusted publisher validates
-      # against the GitHub repo — rewrite only on the runner, never committed.
+      # The committed package.json keeps Codeberg as the canonical repository.
+      # npm's OIDC trusted publisher validates against the GitHub repo —
+      # rewrite only on the runner, never committed.
       - name: Rewrite repository URL to GitHub mirror for OIDC
         run: |
           set -euo pipefail
@@ -116,41 +119,9 @@ jobs:
           mv package.json.tmp package.json
           echo "repository.url rewritten to: ${url}"
 
-      # prepublishOnly only fires on `npm publish`, not `npm pack`. Run the
-      # build explicitly so the dist/ directory is present in the tarball.
-      - run: npm run build
-
-      - run: npm pack
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name:              npm-tarball
-          path:              "*.tgz"
-          if-no-files-found: error
-          retention-days:    1
-
-  publish-npm:
-    # Publishes the pre-built tarball to npm (OIDC) and creates the GitHub
-    # release. No checkout, so npm lifecycle scripts never run here.
-    name: Publish npm + GitHub release
-    needs: [gate, build-npm]
-    if:    needs.gate.outputs.tag != ''
-    runs-on: ubuntu-24.04
-    permissions:
-      contents: write  # GitHub release creation
-      id-token: write  # OIDC for npm trusted publishing + provenance
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: npm-tarball
-
-      - uses: actions/setup-node@v6
-        with:
-          node-version:  '24'
-          registry-url:  https://registry.npmjs.org
-
+      # prepublishOnly runs the build before publish; no explicit build step needed.
       - name: Publish to npm
-        run:  npm publish *.tgz --provenance --access public
+        run:  npm publish --provenance --access public
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v3
