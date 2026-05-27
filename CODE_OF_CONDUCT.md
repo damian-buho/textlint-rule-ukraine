@@ -1,10 +1,15 @@
+<!--
+SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+SPDX-License-Identifier: MIT
+-->
+
 <!-- pf-cli-managed: yes -->
 
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
 
-We pledge to make participation in me.damian-buho/textlint-rule-ukraine welcoming, safe, and
+We pledge to make participation in textlint-rule-ukraine welcoming, safe, and
 equitable for all. We are committed to fostering an environment that respects
 and promotes the dignity, rights, and contributions of all individuals,
 regardless of characteristics including race, ethnicity, caste, color, age,
@@ -16,29 +21,29 @@ other status.
 ## Encouraged Behaviours
 
 - **Respecting the purpose of our community**, our activities, and our ways of
-  gathering.
+ gathering.
 - **Engaging kindly and honestly** with others.
 - **Respecting different viewpoints** and experiences.
 - **Taking responsibility** for our actions and contributions.
 - Gracefully giving and accepting **constructive feedback**.
 - Committing to **repairing harm** when it occurs.
 - Behaving in other ways that promote and sustain the **well-being of our
-  community**.
+ community**.
 
 ## Restricted Behaviours
 
 - **Harassment.** Violating explicitly expressed boundaries or engaging in
-  unnecessary personal attention after any clear request to stop.
+ unnecessary personal attention after any clear request to stop.
 - **Character attacks.** Making insulting, demeaning, or pejorative comments
-  directed at a community member.
-- **Stereotyping or discrimination.** Characterising anyone's personality or
-  behaviour on the basis of immutable identities.
+ directed at a community member.
+- **Stereotyping or discrimination.** Characterising anyone’s personality or
+ behaviour on the basis of immutable identities.
 - **Sexualisation.** Behaving in a way that would generally be considered
-  inappropriately intimate.
-- **Violating confidentiality.** Sharing or acting on someone's personal
-  information without permission.
+ inappropriately intimate.
+- **Violating confidentiality.** Sharing or acting on someone’s personal
+ information without permission.
 - **Endangerment.** Causing, encouraging, or threatening violence or other
-  harm toward any person or group.
+ harm toward any person or group.
 - Behaving in other ways that **threaten the well-being** of our community.
 
 ## Reporting
@@ -54,22 +59,22 @@ Community moderators will follow this Enforcement Ladder when determining the
 consequences for any action they deem in violation of this Code of Conduct:
 
 1. **Warning** — for a single incident or short series of incidents: a
-   private, written warning, with an opportunity to make repair.
+ private, written warning, with an opportunity to make repair.
 2. **Temporarily Limited Activities** — for a repeated incidence of a
-   violation that previously resulted in a warning: a time-limited cooldown
-   period during which the contributor reflects and adjusts behaviour.
+ violation that previously resulted in a warning: a time-limited cooldown
+ period during which the contributor reflects and adjusts behaviour.
 3. **Temporary Suspension** — for a pattern of repeated violation or a single
-   serious violation: removal of access to community spaces for a fixed
-   period, with conditions for return.
+ serious violation: removal of access to community spaces for a fixed
+ period, with conditions for return.
 4. **Permanent Ban** — for a pattern of repeated violations that other steps
-   failed to resolve: permanent removal of access to all community spaces,
-   tools, and communication channels.
+ failed to resolve: permanent removal of access to all community spaces,
+ tools, and communication channels.
 
 ## Scope
 
 This Code of Conduct applies within all community spaces — issues, pull
 requests, chat channels, mailing lists, in-person events — and also applies
-when an individual is officially representing me.damian-buho/textlint-rule-ukraine in public
+when an individual is officially representing textlint-rule-ukraine in public
 spaces.
 
 ## Attribution
