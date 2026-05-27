@@ -37,12 +37,15 @@ concurrency:
 
 jobs:
   gate:
-    # Two-fact gate: Pipeline must have succeeded for a push event, and the
-    # head SHA must carry a tag we haven't already released. Either fails →
-    # publish-npm no-ops via `if: needs.gate.outputs.tag != ''`.
+    # Three-fact gate: Pipeline must have succeeded for a push to main, and the
+    # head SHA must carry a tag we haven't already released. Any failing fact →
+    # all downstream jobs no-op via `if: needs.gate.outputs.tag != ''`.
     name: Gate
     runs-on: ubuntu-24.04
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
+    if: |
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main'
     permissions:
       contents: read
     outputs:
@@ -76,44 +79,76 @@ jobs:
           echo "Releasing ${tag} at $(git rev-parse HEAD)"
           echo "tag=${tag}" >> "$GITHUB_OUTPUT"
 
-  publish-npm:
-    name: Publish npm + GitHub release
+  build-npm:
+    # Build the package and produce a tarball artifact. Runs with minimal
+    # permissions so npm lifecycle scripts cannot access OIDC or write tokens.
+    # The repository.url rewrite is applied here so the published tarball
+    # carries the GitHub mirror URL required by npm's OIDC trusted publisher.
+    name: Build npm artifact
     needs: gate
     if:    needs.gate.outputs.tag != ''
     runs-on: ubuntu-24.04
     permissions:
-      contents:  write  # GitHub release creation + floating tag push
-      id-token:  write  # OIDC for npm provenance
+      contents: read
     steps:
       - uses: actions/checkout@v6
         with:
-          ref:          ${{ github.event.workflow_run.head_sha }}
-          fetch-depth:  0
+          ref:         ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0
 
       - uses: actions/setup-node@v6
         with:
-          node-version:  '24'  # npm 11.5+ ships here; trusted publishing requires it
-          registry-url:  https://registry.npmjs.org
-          cache:         npm
+          node-version: '24'
+          cache:        npm
 
       - run: npm ci
 
-      # The committed package.json keeps Codeberg as the canonical
-      # repository (matches projectfile.yaml). npm's OIDC trusted publisher
-      # validates against the GitHub repo that owns the workflow's OIDC
-      # token — so rewrite repository.url here, only on the runner. The
-      # edit never touches the committed file.
+      # The committed package.json keeps Codeberg as the canonical repository
+      # (matches projectfile.yaml). npm's OIDC trusted publisher validates
+      # against the GitHub repo — rewrite only on the runner, never committed.
       - name: Rewrite repository URL to GitHub mirror for OIDC
         run: |
           set -euo pipefail
           url="https://github.com/${{ github.repository }}"
           jq --arg url "$url" '.repository.url = $url' package.json > package.json.tmp
           mv package.json.tmp package.json
-          echo "repository.url rewritten to: $url"
+          echo "repository.url rewritten to: ${url}"
 
-      # prepublishOnly runs the build, so no explicit build step is needed.
+      # prepublishOnly only fires on `npm publish`, not `npm pack`. Run the
+      # build explicitly so the dist/ directory is present in the tarball.
+      - run: npm run build
+
+      - run: npm pack
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name:              npm-tarball
+          path:              "*.tgz"
+          if-no-files-found: error
+          retention-days:    1
+
+  publish-npm:
+    # Publishes the pre-built tarball to npm (OIDC) and creates the GitHub
+    # release. No checkout, so npm lifecycle scripts never run here.
+    name: Publish npm + GitHub release
+    needs: [gate, build-npm]
+    if:    needs.gate.outputs.tag != ''
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write  # GitHub release creation
+      id-token: write  # OIDC for npm trusted publishing + provenance
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: npm-tarball
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version:  '24'
+          registry-url:  https://registry.npmjs.org
+
       - name: Publish to npm
-        run:  npm publish --provenance --access public
+        run:  npm publish *.tgz --provenance --access public
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v3
@@ -121,9 +156,24 @@ jobs:
           tag_name:               ${{ needs.gate.outputs.tag }}
           generate_release_notes: true
 
-      # Floating tags let consumers pin `@v1` / `@v1.2` and keep receiving
-      # patch updates. Pushed with GITHUB_TOKEN so the tag push does not
-      # retrigger Pipeline → no Release loop.
+  update-floating-tags:
+    # Moves the floating major/minor tags (v1, v1.2) to the new release SHA.
+    # Uses contents: write only — no OIDC — so the checkout cannot be
+    # leveraged to exfiltrate privileged tokens. Checks out the published tag
+    # ref rather than the raw head_sha, breaking the taint chain.
+    # Pushed with GITHUB_TOKEN so the tag push does not retrigger Pipeline.
+    name: Update floating tags
+    needs: [gate, publish-npm]
+    if:    needs.gate.outputs.tag != ''
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref:         ${{ needs.gate.outputs.tag }}
+          fetch-depth: 0
+
       - name: Update floating major/minor tags
         env:
           VERSION: ${{ needs.gate.outputs.tag }}
