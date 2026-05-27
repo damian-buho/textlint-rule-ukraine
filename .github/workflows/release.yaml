@@ -98,6 +98,19 @@ jobs:
 
       - run: npm ci
 
+      # The committed package.json keeps Codeberg as the canonical
+      # repository (matches projectfile.yaml). npm's OIDC trusted publisher
+      # validates against the GitHub repo that owns the workflow's OIDC
+      # token — so rewrite repository.url here, only on the runner. The
+      # edit never touches the committed file.
+      - name: Rewrite repository URL to GitHub mirror for OIDC
+        run: |
+          set -euo pipefail
+          url="https://github.com/${{ github.repository }}"
+          jq --arg url "$url" '.repository.url = $url' package.json > package.json.tmp
+          mv package.json.tmp package.json
+          echo "repository.url rewritten to: $url"
+
       # prepublishOnly runs the build, so no explicit build step is needed.
       - name: Publish to npm
         run:  npm publish --provenance --access public
