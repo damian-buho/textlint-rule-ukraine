@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: 2026 Damián Búho <damian.buho@proton.me>
+#
+# SPDX-License-Identifier: MIT
+
+name: Pipeline
+# Validation pipeline. Runs on PRs and pushes to main, and is reused by
+# release.yaml so a tagged commit gets re-validated against the exact tag SHA
+# before publishing.
+
+on:
+  workflow_dispatch:
+  push:
+    # Tag pushes run Pipeline too: success on a tag-push run is what fires
+    # Release via workflow_run. Without this, tagging a SHA never produces a
+    # downstream Release trigger.
+    branches: [main]
+    tags:     ['**']
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  # PRs collapse to one in-flight run per branch; main pushes never cancel each
+  # other so we keep a full history of green/red on the default branch.
+  group: pipeline-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  checks:
+    name: Checks
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Format check
+        run: npm run format:check
+
+  test:
+    name: Test (Node ${{ matrix.node-version }} / ${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: ['22', '24']
+        os: [ubuntu-24.04, macos-26, windows-2025]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - run: npm test
