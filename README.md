@@ -10,7 +10,6 @@ SPDX-License-Identifier: MIT
 ![NPM Downloads](https://img.shields.io/npm/dm/textlint-rule-ukraine?style=flat-square)
 ![NPM Version](https://img.shields.io/npm/v/textlint-rule-ukraine?style=flat-square)
 ![NPM Last Update](https://img.shields.io/npm/last-update/textlint-rule-ukraine?style=flat-square)
-![npm bundle size](https://img.shields.io/bundlephobia/min/textlint-rule-ukraine?style=flat-square)
 ![NPM License](https://img.shields.io/npm/l/textlint-rule-ukraine?style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
