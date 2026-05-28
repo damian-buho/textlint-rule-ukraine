@@ -6,10 +6,10 @@ name: Release
 # Fires when Pipeline finishes successfully and a git tag points to the head
 # commit. Publishes to npm via OIDC trusted publishing.
 #
-# To release: push a tag.
-#   git tag vX.Y.Z && git push origin vX.Y.Z
-# Pipeline runs on the tag push; its success triggers this workflow; the gate
-# finds the tag at HEAD; publish-npm publishes.
+# To release: push the version commit to main, then push a tag.
+#   git push origin main && git push origin X.Y.Z
+# Pipeline runs on the branch push; its success triggers this workflow; the gate
+# finds the tag at HEAD (tag must be pushed before the pipeline finishes); publish-npm publishes.
 #
 # There is no workflow_dispatch path — tag creation IS the release operation.
 #
@@ -30,8 +30,7 @@ permissions:
 
 concurrency:
   # workflow_run carries no meaningful github.ref — key on the underlying
-  # head_sha so two pipeline runs for the same SHA (branch push + tag push)
-  # serialize. Never cancel; the gate dedups any duplicate trigger.
+  # head_sha so retried pipeline runs for the same SHA serialize.
   group: release-${{ github.event.workflow_run.head_sha }}
   cancel-in-progress: false
 
@@ -60,9 +59,8 @@ jobs:
         name: Resolve tag at HEAD (and dedup)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # Tagged commits typically produce TWO Pipeline runs (branch push +
-        # tag push), each firing Release. We dedup by skipping if a GitHub
-        # release for this tag already exists from the first run.
+        # Dedup against workflow_dispatch or manual re-runs by checking whether
+        # a GitHub release for this tag already exists.
         run: |
           set -euo pipefail
           tag=$(git tag --points-at HEAD | head -n1)
