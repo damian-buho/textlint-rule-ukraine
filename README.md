@@ -16,6 +16,7 @@ SPDX-License-Identifier: MIT
 [![Pipeline](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/damian-buho/repolinter/actions/workflows/pipeline.yaml)
 [![CodeQL](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/github-code-scanning/codeql)
 [![Known Vulnerabilities](https://snyk.io/test/npm/textlint-rule-ukraine/badge.svg)](https://snyk.io/test/npm/textlint-rule-ukraine)
+[![REUSE status](https://api.reuse.software/badge/github.com/damian-buho/textlint-rule-ukraine)](https://api.reuse.software/info/github.com/damian-buho/textlint-rule-ukraine)
 
 
 A [textlint](https://textlint.github.io/) rule that detects and fixes russified spellings of Ukrainian geographical and personal names.
