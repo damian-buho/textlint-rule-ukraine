@@ -16,6 +16,8 @@ pre-commit:
       # naturally inert for commits that don't touch source files.
       glob: "{src/**/*.ts,tests/**/*.ts}"
       run: npx eslint {staged_files}
+    audit:
+      run: npm audit
 
 pre-push:
   commands:
