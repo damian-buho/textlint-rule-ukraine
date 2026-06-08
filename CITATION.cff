@@ -9,7 +9,7 @@ message: Please cite this software using the metadata from this file.
 type: software
 title: textlint-rule-ukraine
 abstract: textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them
-version: 1.2.4
+version: 1.2.5
 keywords:
   - textlint
   - ukraine
