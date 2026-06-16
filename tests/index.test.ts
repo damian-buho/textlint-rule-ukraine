@@ -4,8 +4,10 @@
 
 // Expose Node.js built-in test globals so textlint-tester can pick them up.
 import { describe, it } from "node:test";
-(globalThis as Record<string, unknown>).describe = describe;
-(globalThis as Record<string, unknown>).it = it;
+Object.defineProperties(globalThis, {
+  describe: { value: describe, writable: true, configurable: true },
+  it: { value: it, writable: true, configurable: true },
+});
 
 import { createRequire } from "node:module";
 const _required = createRequire(import.meta.url)("textlint-tester") as Record<string, unknown>;

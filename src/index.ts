@@ -39,7 +39,9 @@ const buildMatcher = (entries: Entry[]) => {
     return { pattern: NEVER_MATCH, byLowerWrong };
   }
   // Sort longest-first in the alternation to prevent prefix shadowing.
-  const allWrong = [...byLowerWrong.keys()].toSorted((a, b) => b.length - a.length);
+  const allWrong = Iterator.from(byLowerWrong.keys())
+    .toArray()
+    .toSorted((a, b) => b.length - a.length);
   const pattern = new RegExp(
     `${WB.open}(?:${allWrong.map((s) => escape(s)).join("|")})${WB.close}`,
     "giu",
@@ -51,7 +53,7 @@ const buildMatcher = (entries: Entry[]) => {
 const matcherCache = new Map<string, ReturnType<typeof buildMatcher>>();
 
 const getMatcher = (enabledTags: string[]) => {
-  const key = [...enabledTags].toSorted().join("|");
+  const key = [...enabledTags].toSorted((a, b) => a.localeCompare(b)).join("|");
   if (!matcherCache.has(key)) {
     const entries = loadDictionary().filter((entry: Entry) =>
       entry.tags.some((tag: string) => enabledTags.includes(tag)),

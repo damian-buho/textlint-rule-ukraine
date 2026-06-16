@@ -14,8 +14,6 @@ export type Entry = {
   exact?: boolean;
 };
 
-let cached: Entry[] | undefined;
-
 // Walk upward for the data/ sibling — handles published (dist/lib → up 2),
 // dev build (dist/lib → up 2), and test compile (dist/test/src → up 3).
 const findDictionaryPath = (): string => {
@@ -28,9 +26,11 @@ const findDictionaryPath = (): string => {
   throw new Error("data/dictionary.json not found in any ancestor of " + import.meta.dirname);
 };
 
+const cache: { value?: Entry[] } = {};
+
 export const loadDictionary = (): Entry[] => {
-  if (cached === undefined) {
-    cached = JSON.parse(readFileSync(findDictionaryPath(), "utf8")) as Entry[];
+  if (cache.value === undefined) {
+    cache.value = JSON.parse(readFileSync(findDictionaryPath(), "utf8")) as Entry[];
   }
-  return cached;
+  return cache.value;
 };
