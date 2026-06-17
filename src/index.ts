@@ -54,20 +54,27 @@ const buildMatcher = (entries: Entry[]) => {
 // Cache keyed by sorted enabled-tags string, e.g. "extra|geo|names".
 const matcherCache = new Map<string, ReturnType<typeof buildMatcher>>();
 
+const matcherCacheEnsure = (key: string, build: () => ReturnType<typeof buildMatcher>) => {
+  const cached = matcherCache.get(key);
+  if (cached) return cached;
+  const value = build();
+  matcherCache.set(key, value);
+  return value;
+};
+
 const getMatcher = (enabledTags: string[], dictionaryOverrides?: Entry[]) => {
   const key =
     [...enabledTags].toSorted((a, b) => a.localeCompare(b)).join("|") +
     (dictionaryOverrides ? JSON.stringify(dictionaryOverrides) : "");
-  if (!matcherCache.has(key)) {
+  return matcherCacheEnsure(key, () => {
     const entries = loadDictionary().filter((entry: Entry) =>
       entry.tags.some((tag: string) => enabledTags.includes(tag)),
     );
     if (dictionaryOverrides) {
       entries.push(...dictionaryOverrides);
     }
-    matcherCache.set(key, buildMatcher(entries));
-  }
-  return matcherCache.get(key)!;
+    return buildMatcher(entries);
+  });
 };
 
 const resolveEnabledTags = (options: Options): string[] => {
