@@ -112,9 +112,9 @@ describe("preserveCase — Cyrillic", () => {
 describe("preserveCase — Unicode normalization", () => {
   it("precomposed é vs decomposed e+combining", () => {
     // U+00E9 (precomposed é) — all lowercase
-    assert.equal(preserveCase("\u00E9", "Bakhmut"), "bakhmut");
+    assert.equal(preserveCase("\u{00E9}", "Bakhmut"), "bakhmut");
     // U+0045 U+0301 (decomposed E + combining acute) — all uppercase
-    assert.equal(preserveCase("\u0045\u0301", "Bakhmut"), "BAKHMUT");
+    assert.equal(preserveCase("\u{0045}\u{0301}", "Bakhmut"), "BAKHMUT");
   });
 
   it("NFC title-case works", () => {

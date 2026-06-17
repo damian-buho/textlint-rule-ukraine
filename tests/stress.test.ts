@@ -54,8 +54,8 @@ const generateLongText = (paragraphs: number): string => {
     "The city of Bakhmut has been heavily fortified.",
   ];
   return Array.from({ length: paragraphs }, () => {
-    const idx = Math.floor(Math.random() * sentences.length);
-    return sentences[idx] + "\n\n";
+    const index = Math.floor(Math.random() * sentences.length);
+    return sentences[index] + "\n\n";
   }).join("");
 };
 
@@ -83,16 +83,15 @@ describe("stress — full dictionary with all tags", () => {
     const longText = generateLongText(500);
     const start = performance.now();
     matcher.pattern.lastIndex = 0;
-    let count = 0;
-    let m: RegExpExecArray | null;
-    while ((m = matcher.pattern.exec(longText)) !== null) {
-      count++;
+    let benignCount = 0;
+    while (matcher.pattern.exec(longText) !== null) {
+      benignCount++;
     }
     const elapsed = performance.now() - start;
     // Must finish well under 1 second regardless of matches found.
     assert.ok(elapsed < 1000, `took ${elapsed.toFixed(0)}ms, expected < 1000ms`);
-    if (count > 0) {
-      console.log(`INFO: benign text matched ${count} entries (may contain correct forms)`);
+    if (benignCount > 0) {
+      console.log(`INFO: benign text matched ${benignCount} entries (may contain correct forms)`);
     }
   });
 
@@ -171,11 +170,11 @@ describe("stress — full dictionary with all tags", () => {
     ];
     for (const word of innocent) {
       matcher.pattern.lastIndex = 0;
-      const m = matcher.pattern.exec(word);
-      if (m) {
+      const match = matcher.pattern.exec(word);
+      if (match) {
         // Some innocent words might match if they happen to be in the
         // dictionary (e.g. "Sumi" → "Sumy" in geo). Just log and skip.
-        const entry = matcher.byLowerWrong.get(m[0].toLowerCase());
+        const entry = matcher.byLowerWrong.get(match[0].toLowerCase());
         if (entry) {
           console.log(`INFO: "${word}" matches entry "${entry.id}" — expected?`);
         }
@@ -190,15 +189,13 @@ describe("stress — full dictionary with all tags", () => {
       "A".repeat(100) + "nasty",
       "X".repeat(200),
       // Long string with lots of word-boundary-like transitions.
-      Array.from({ length: 50 }, (_, i) => String.fromCodePoint(0x41 + (i % 26))).join(""),
+      Array.from({ length: 50 }, (_, index) => String.fromCodePoint(0x41 + (index % 26))).join(""),
     ];
     for (const input of adversarial) {
       const start = performance.now();
       matcher.pattern.lastIndex = 0;
-      let count = 0;
-      let m: RegExpExecArray | null;
-      while ((m = matcher.pattern.exec(input)) !== null) {
-        count++;
+      while (matcher.pattern.exec(input) !== null) {
+        // Deliberately empty — exercising the regex engine.
       }
       const elapsed = performance.now() - start;
       assert.ok(elapsed < 500, `adversarial input took ${elapsed.toFixed(0)}ms`);
@@ -209,23 +206,34 @@ describe("stress — full dictionary with all tags", () => {
     // Text that has many word-boundary transitions but no actual match.
     // The regex engine has to check each boundary position.
     const words = [
-      "Kievsky", "kievskiy", "odesskii", "lvovskii", "kharkovskii",
-      "dneprovskii", "zaporozhskii", "chernigovskii", "zhitomirskii",
-      "poltavskii", "sumskoi", "rovnenskii", "lutskii", "ternopolskii",
+      "Kievsky",
+      "kievskiy",
+      "odesskii",
+      "lvovskii",
+      "kharkovskii",
+      "dneprovskii",
+      "zaporozhskii",
+      "chernigovskii",
+      "zhitomirskii",
+      "poltavskii",
+      "sumskoi",
+      "rovnenskii",
+      "lutskii",
+      "ternopolskii",
     ];
-    const text = Array.from({ length: 200 }, () =>
-      words[Math.floor(Math.random() * words.length)],
+    const text = Array.from(
+      { length: 200 },
+      () => words[Math.floor(Math.random() * words.length)],
     ).join(" ");
     const start = performance.now();
     matcher.pattern.lastIndex = 0;
-    let count = 0;
-    let m: RegExpExecArray | null;
-    while ((m = matcher.pattern.exec(text)) !== null) {
-      count++;
+    let nearMissCount = 0;
+    while (matcher.pattern.exec(text) !== null) {
+      nearMissCount++;
     }
     const elapsed = performance.now() - start;
     // These near-misses should not match any entry.
-    assert.equal(count, 0);
+    assert.equal(nearMissCount, 0);
     assert.ok(elapsed < 1000, `near-miss text took ${elapsed.toFixed(0)}ms`);
   });
 });
