@@ -201,6 +201,65 @@ tester.run("dictionaryOverrides — appends custom entries", rule, {
   ],
 });
 
+// --- exact: true bypasses preserveCase --------------------------------------
+
+tester.run("exact — bypasses case preservation", rule, {
+  valid: [
+    {
+      text: "lower is the correct form.",
+      options: { extra: true },
+    },
+  ],
+  invalid: [
+    {
+      // Without exact: true, "TEST" would become "LOWER" via preserveCase.
+      text: "TEST is wrong.",
+      output: "lower is wrong.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["TEST"], correct: "lower", id: "exact-test", tags: ["geo"], exact: true },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"TEST" is a russified place name. Use the Ukrainian spelling "lower" (exact-test).',
+        },
+      ],
+    },
+    {
+      text: "Test is wrong.",
+      output: "lower is wrong.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["Test"], correct: "lower", id: "exact-test2", tags: ["geo"], exact: true },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"Test" is a russified place name. Use the Ukrainian spelling "lower" (exact-test2).',
+        },
+      ],
+    },
+    {
+      text: "test is wrong.",
+      output: "lower is wrong.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["test"], correct: "lower", id: "exact-test3", tags: ["geo"], exact: true },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"test" is a russified place name. Use the Ukrainian spelling "lower" (exact-test3).',
+        },
+      ],
+    },
+  ],
+});
+
 // --- geo: false --------------------------------------------------------------
 
 tester.run("geo: false — place names not checked", rule, {
