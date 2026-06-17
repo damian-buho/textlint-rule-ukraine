@@ -17,7 +17,7 @@ pre-commit:
       glob: "{src/**/*.ts,tests/**/*.ts}"
       run: npx eslint {staged_files}
     audit:
-      run: npm audit
+      run: npm audit --audit-level=critical
 
 pre-push:
   commands:
