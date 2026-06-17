@@ -64,6 +64,8 @@ Replacements are case-preserving:
 
 Text inside fenced code blocks and inline backtick spans is never touched.
 
+Only three casing patterns are detected: **ALL CAPS**, **all lower**, and **Title case**. Mixed or irregular casing like `aRTyOMovsK` is left in canonical form (`Artemivsk`) instead of trying to mirror a garbled input — the fix is always clean Ukrainian orthography.
+
 ## Options
 
 The dictionary is split into tagged groups. `geo` is on by default; `names` and `extra` are opt-in.
@@ -107,7 +109,7 @@ To disable place names (e.g. when only personal names matter):
 
 ### `dictionaryOverrides`
 
-Append entries to the dictionary at runtime without patching `data/dictionary.json` inside `node_modules`. Each entry follows the same shape as the built-in dictionary:
+Append entries to the dictionary at runtime without patching `data/dictionary.json` inside `node_modules`. Each entry follows the same shape as the built-in dictionary and supports the same fields, including the `exact` flag (see [Dictionary](#dictionary)):
 
 ```json
 {
