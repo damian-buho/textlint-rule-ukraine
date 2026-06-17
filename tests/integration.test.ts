@@ -103,8 +103,7 @@ describe("integration — textlint loads ESM package", { concurrency: false }, (
   });
 
   it("auto-fixes to correct spelling", () => {
-    // Set up a fresh document to fix.
-    runTextlint(workDirectory, "Artyomovsk is a city.");
+    writeFileSync(path.join(workDirectory, "doc.md"), "Artyomovsk is a city.");
     try {
       execSync("npx textlint --fix doc.md", {
         cwd: workDirectory,
