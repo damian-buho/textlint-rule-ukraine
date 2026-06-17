@@ -13,6 +13,8 @@ export type Options = {
   names?: boolean;
   // Opinionated / extra entries (e.g. lowercase "russia").
   extra?: boolean;
+  // Additional entries appended at runtime (last-write-wins for same `wrong` strings).
+  dictionaryOverrides?: Entry[];
 };
 
 const escape = (s: string): string => s.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
@@ -52,15 +54,27 @@ const buildMatcher = (entries: Entry[]) => {
 // Cache keyed by sorted enabled-tags string, e.g. "extra|geo|names".
 const matcherCache = new Map<string, ReturnType<typeof buildMatcher>>();
 
-const getMatcher = (enabledTags: string[]) => {
-  const key = [...enabledTags].toSorted((a, b) => a.localeCompare(b)).join("|");
-  if (!matcherCache.has(key)) {
+const matcherCacheEnsure = (key: string, build: () => ReturnType<typeof buildMatcher>) => {
+  const cached = matcherCache.get(key);
+  if (cached) return cached;
+  const value = build();
+  matcherCache.set(key, value);
+  return value;
+};
+
+const getMatcher = (enabledTags: string[], dictionaryOverrides?: Entry[]) => {
+  const key =
+    [...enabledTags].toSorted((a, b) => a.localeCompare(b)).join("|") +
+    (dictionaryOverrides ? JSON.stringify(dictionaryOverrides) : "");
+  return matcherCacheEnsure(key, () => {
     const entries = loadDictionary().filter((entry: Entry) =>
       entry.tags.some((tag: string) => enabledTags.includes(tag)),
     );
-    matcherCache.set(key, buildMatcher(entries));
-  }
-  return matcherCache.get(key)!;
+    if (dictionaryOverrides) {
+      entries.push(...dictionaryOverrides);
+    }
+    return buildMatcher(entries);
+  });
 };
 
 const resolveEnabledTags = (options: Options): string[] => {
@@ -84,7 +98,7 @@ const buildMessage = (wrong: string, replacement: string, entry: Entry): string 
 
 const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
   const { Syntax, RuleError, fixer, report, getSource } = context;
-  const matcher = getMatcher(resolveEnabledTags(options));
+  const matcher = getMatcher(resolveEnabledTags(options), options.dictionaryOverrides);
 
   return {
     [Syntax.Str](node) {

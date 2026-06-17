@@ -8,15 +8,22 @@ pre-commit:
       # Scope to staged sources only — stage_fixed re-stages prettier's edits
       # so the commit lands clean. Without it, prettier rewrites would surface
       # as a dirty diff immediately after the commit.
-      glob: "{src/**/*.ts,tests/**/*.ts,data/**/*.json}"
+      # Cover both top-level files (src/foo.ts) and nested (src/sub/foo.ts).
+      # lefthook's glob treats `**` as requiring ≥1 directory segment, so
+      # `src/**/*.ts` alone never matches top-level sources and silently skips.
+      glob: "{src/*.ts,src/**/*.ts,tests/*.ts,tests/**/*.ts,data/*.json,data/**/*.json}"
       run: npx prettier --write {staged_files}
       stage_fixed: true
     lint:
       # Scoped to staged TS sources only — much faster than `eslint ./` and
       # naturally inert for commits that don't touch source files.
-      glob: "{src/**/*.ts,tests/**/*.ts}"
+      # Same `**` top-level caveat as format — include `*.ts` alongside `**/*.ts`.
+      glob: "{src/*.ts,src/**/*.ts,tests/*.ts,tests/**/*.ts}"
       run: npx eslint {staged_files}
     audit:
+      # Bare `npm audit` (no --audit-level) so ANY vulnerability blocks the
+      # commit. --audit-level=critical is the most permissive setting, not the
+      # strictest — it exits 0 for high/moderate/low, letting them slip through.
       run: npm audit
 
 pre-push:

@@ -169,6 +169,97 @@ tester.run("geo — unicode boundaries reject embedded matches", rule, {
   invalid: [],
 });
 
+// --- dictionaryOverrides ----------------------------------------------------
+
+tester.run("dictionaryOverrides — appends custom entries", rule, {
+  valid: [
+    {
+      text: "Tsaritsyn is a city.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["Tsarytsyn"], correct: "Tsaritsyn", id: "tsaritsyn", tags: ["geo"] },
+        ],
+      },
+    },
+  ],
+  invalid: [
+    {
+      text: "Tsarytsyn is a city.",
+      output: "Tsaritsyn is a city.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["Tsarytsyn"], correct: "Tsaritsyn", id: "tsaritsyn", tags: ["geo"] },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"Tsarytsyn" is a russified place name. Use the Ukrainian spelling "Tsaritsyn" (tsaritsyn).',
+        },
+      ],
+    },
+  ],
+});
+
+// --- exact: true bypasses preserveCase --------------------------------------
+
+tester.run("exact — bypasses case preservation", rule, {
+  valid: [
+    {
+      text: "lower is the correct form.",
+      options: { extra: true },
+    },
+  ],
+  invalid: [
+    {
+      // Without exact: true, "TEST" would become "LOWER" via preserveCase.
+      text: "TEST is wrong.",
+      output: "lower is wrong.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["TEST"], correct: "lower", id: "exact-test", tags: ["geo"], exact: true },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"TEST" is a russified place name. Use the Ukrainian spelling "lower" (exact-test).',
+        },
+      ],
+    },
+    {
+      text: "Test is wrong.",
+      output: "lower is wrong.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["Test"], correct: "lower", id: "exact-test2", tags: ["geo"], exact: true },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"Test" is a russified place name. Use the Ukrainian spelling "lower" (exact-test2).',
+        },
+      ],
+    },
+    {
+      text: "test is wrong.",
+      output: "lower is wrong.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["test"], correct: "lower", id: "exact-test3", tags: ["geo"], exact: true },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"test" is a russified place name. Use the Ukrainian spelling "lower" (exact-test3).',
+        },
+      ],
+    },
+  ],
+});
+
 // --- geo: false --------------------------------------------------------------
 
 tester.run("geo: false — place names not checked", rule, {

@@ -4,6 +4,7 @@
 
 // Replace `replacement` text while preserving the casing style of `matched`.
 export const preserveCase = (matched: string, replacement: string): string => {
+  if (matched === "") return "";
   if (matched === matched.toUpperCase()) {
     // ALL CAPS → ALL CAPS
     return replacement.toUpperCase();
