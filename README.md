@@ -68,11 +68,12 @@ Text inside fenced code blocks and inline backtick spans is never touched.
 
 The dictionary is split into tagged groups. `geo` is on by default; `names` and `extra` are opt-in.
 
-| Option  | Default | Covers                                            |
-| ------- | ------- | ------------------------------------------------- |
-| `geo`   | `true`  | Place names (cities, regions, rivers)             |
-| `names` | `false` | Personal names (first names, public figures)      |
-| `extra` | `false` | Opinionated corrections (e.g. lowercase _russia_) |
+| Option                | Default  | Covers                                                      |
+| --------------------- | -------- | ----------------------------------------------------------- |
+| `geo`                 | `true`   | Place names (cities, regions, rivers)                       |
+| `names`               | `false`  | Personal names (first names, public figures)                |
+| `extra`               | `false`  | Opinionated corrections (e.g. lowercase _russia_)           |
+| `dictionaryOverrides` | `[]`     | Additional entries appended at runtime (see below)          |
 
 To enable personal names checking:
 
@@ -104,6 +105,24 @@ To disable place names (e.g. when only personal names matter):
 }
 ```
 
+### `dictionaryOverrides`
+
+Append entries to the dictionary at runtime without patching `data/dictionary.json` inside `node_modules`. Each entry follows the same shape as the built-in dictionary:
+
+```json
+{
+  "rules": {
+    "ukraine": {
+      "dictionaryOverrides": [
+        { "wrong": ["Novoiavorivsk"], "correct": "Novoiavorivsk", "id": "novoiavorivsk", "tags": ["geo"] }
+      ]
+    }
+  }
+}
+```
+
+If an override declares the same `wrong` string as a built-in entry, the override wins (last-write-wins).
+
 ## Dictionary
 
 All entries live in `data/dictionary.json`. Each entry has the form:
@@ -117,6 +136,8 @@ By default replacements are case-preserving (`Bahmut→Bakhmut`, `BAHMUT→BAKHM
 ```json
 { "wrong": ["Russia"], "correct": "russia", "id": "example", "exact": true, "tags": ["extra"] }
 ```
+
+Override entries follow the same format — use `tags` to control which option group activates them.
 
 ## Contributing
 

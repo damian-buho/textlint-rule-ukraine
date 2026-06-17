@@ -169,6 +169,38 @@ tester.run("geo — unicode boundaries reject embedded matches", rule, {
   invalid: [],
 });
 
+// --- dictionaryOverrides ----------------------------------------------------
+
+tester.run("dictionaryOverrides — appends custom entries", rule, {
+  valid: [
+    {
+      text: "Tsaritsyn is a city.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["Tsarytsyn"], correct: "Tsaritsyn", id: "tsaritsyn", tags: ["geo"] },
+        ],
+      },
+    },
+  ],
+  invalid: [
+    {
+      text: "Tsarytsyn is a city.",
+      output: "Tsaritsyn is a city.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["Tsarytsyn"], correct: "Tsaritsyn", id: "tsaritsyn", tags: ["geo"] },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"Tsarytsyn" is a russified place name. Use the Ukrainian spelling "Tsaritsyn" (tsaritsyn).',
+        },
+      ],
+    },
+  ],
+});
+
 // --- geo: false --------------------------------------------------------------
 
 tester.run("geo: false — place names not checked", rule, {
