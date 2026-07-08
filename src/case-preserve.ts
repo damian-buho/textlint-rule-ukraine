@@ -13,8 +13,10 @@ export const preserveCase = (matched: string, replacement: string): string => {
     // all lower → all lower
     return replacement.toLowerCase();
   }
+  const first = matched.at(0);
   if (
-    matched.at(0) === matched.at(0)!.toUpperCase() &&
+    first !== undefined &&
+    first === first.toUpperCase() &&
     matched.slice(1) === matched.slice(1).toLowerCase()
   ) {
     // Title case → Title case
