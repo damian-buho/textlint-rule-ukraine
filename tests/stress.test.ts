@@ -6,41 +6,24 @@ import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import { loadDictionary, type Entry } from "../src/dictionary.js";
 import { preserveCase } from "../src/case-preserve.js";
-
-// Replicate internals from index.ts so this test doesn't depend on private API.
-const escape = (s: string): string => s.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
-
-const NEVER_MATCH = /(?!)/gu;
-
-const WB = {
-  open: String.raw`(?<![\p{L}\p{N}_])`,
-  close: String.raw`(?![\p{L}\p{N}_])`,
-};
+import { buildMatcher } from "../src/index.js";
 
 type Matcher = ReturnType<typeof buildMatcher>;
 
-const buildMatcher = (entries: Entry[]) => {
-  const byLowerWrong = new Map<string, Entry>();
-  for (const entry of entries) {
-    for (const w of entry.wrong) {
-      byLowerWrong.set(w.toLowerCase(), entry);
-    }
-  }
-  if (byLowerWrong.size === 0) {
-    return { pattern: NEVER_MATCH, byLowerWrong };
-  }
-  const allWrong = Iterator.from(byLowerWrong.keys())
-    .toArray()
-    .toSorted((a, b) => b.length - a.length);
-  const pattern = new RegExp(
-    `${WB.open}(?:${allWrong.map((s) => escape(s)).join("|")})${WB.close}`,
-    "giu",
-  );
-  return { pattern, byLowerWrong };
+// Mulberry32 — simple seeded 32-bit PRNG for deterministic test data.
+const mulberry32 = (seed: number): (() => number) => {
+  let state = seed;
+  return () => {
+    state = Math.trunc(state + 0x6d_2b_79_f5);
+    let t = Math.imul(state ^ (state >>> 15), 1 | state);
+    t ^= Math.trunc(t + Math.imul(t ^ (t >>> 7), 61 | t));
+    return Math.trunc((t ^ (t >>> 14)) >>> 0) / 4_294_967_296;
+  };
 };
 
 // Fill a string with harmless content to make the regex do work.
-const generateLongText = (paragraphs: number): string => {
+const generateLongText = (paragraphs: number, seed = 42): string => {
+  const random = mulberry32(seed);
   const sentences = [
     "The city of Kyiv is the capital of Ukraine.",
     "Odesa is a major port city on the Black Sea.",
@@ -54,7 +37,7 @@ const generateLongText = (paragraphs: number): string => {
     "The city of Bakhmut has been heavily fortified.",
   ];
   return Array.from({ length: paragraphs }, () => {
-    const index = Math.floor(Math.random() * sentences.length);
+    const index = Math.floor(random() * sentences.length);
     return sentences[index] + "\n\n";
   }).join("");
 };
@@ -221,10 +204,10 @@ describe("stress — full dictionary with all tags", () => {
       "lutskii",
       "ternopolskii",
     ];
-    const text = Array.from(
-      { length: 200 },
-      () => words[Math.floor(Math.random() * words.length)],
-    ).join(" ");
+    const random = mulberry32(123);
+    const text = Array.from({ length: 200 }, () => words[Math.floor(random() * words.length)]).join(
+      " ",
+    );
     const start = performance.now();
     matcher.pattern.lastIndex = 0;
     let nearMissCount = 0;

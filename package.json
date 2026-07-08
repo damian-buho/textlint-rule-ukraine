@@ -5,6 +5,12 @@
   "description": "textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/index.d.ts",
+      "default": "./dist/lib/index.js"
+    }
+  },
   "files": [
     "dist/lib/",
     "data/"
@@ -13,11 +19,14 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "npm run clean && tsc",
-    "test": "npm run build && tsc --project tsconfig.test.json && node --test 'dist/test/**/*.test.js'",
-    "test:verbose": "npm run build && tsc --project tsconfig.test.json && node --test --test-reporter spec 'dist/test/**/*.test.js'",
-    "test:coverage": "npm run build && tsc --project tsconfig.test.json && node --test --experimental-test-coverage 'dist/test/**/*.test.js'",
+    "prebuild": "rm -rf dist",
+    "build": "tsc",
+    "build:test": "tsc --project tsconfig.test.json",
+    "pretest": "npm run build:test",
+    "test": "node --test 'dist/test/**/*.test.js'",
+    "test:verbose": "node --test --test-reporter spec 'dist/test/**/*.test.js'",
+    "test:coverage": "node --test --experimental-test-coverage 'dist/test/**/*.test.js'",
+    "audit": "npm audit",
     "prepublishOnly": "npm run build",
     "lint": "eslint ./",
     "fix": "eslint ./ --fix",
@@ -42,7 +51,7 @@
     "@eslint/js": "10.0.1",
     "@textlint/types": "15.7.1",
     "@types/eslint": "9.6.1",
-    "@types/node": "26.1.0",
+    "@types/node": "26.1.1",
     "eslint": "10.6.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import-x": "4.17.1",
