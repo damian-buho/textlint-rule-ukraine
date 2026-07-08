@@ -5,6 +5,12 @@
   "description": "textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them",
   "main": "dist/lib/index.js",
   "types": "dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/index.d.ts",
+      "default": "./dist/lib/index.js"
+    }
+  },
   "files": [
     "dist/lib/",
     "data/"
