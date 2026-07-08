@@ -29,7 +29,7 @@ const WB = {
   close: String.raw`(?![\p{L}\p{N}_])`,
 };
 
-const buildMatcher = (entries: Entry[]) => {
+export const buildMatcher = (entries: Entry[]) => {
   // Flatten to (wrongString → entry) for O(1) lookup during matching.
   const byLowerWrong = new Map<string, Entry>();
   for (const entry of entries) {
@@ -41,9 +41,8 @@ const buildMatcher = (entries: Entry[]) => {
     return { pattern: NEVER_MATCH, byLowerWrong };
   }
   // Sort longest-first in the alternation to prevent prefix shadowing.
-  const allWrong = Iterator.from(byLowerWrong.keys())
-    .toArray()
-    .toSorted((a, b) => b.length - a.length);
+  // eslint-disable-next-line unicorn/prefer-iterator-to-array -- spread avoids Iterator Helpers dependency
+  const allWrong = [...byLowerWrong.keys()].toSorted((a, b) => b.length - a.length);
   const pattern = new RegExp(
     `${WB.open}(?:${allWrong.map((s) => escape(s)).join("|")})${WB.close}`,
     "giu",
@@ -63,16 +62,19 @@ const matcherCacheEnsure = (key: string, build: () => ReturnType<typeof buildMat
 };
 
 const getMatcher = (enabledTags: string[], dictionaryOverrides?: Entry[]) => {
-  const key =
-    [...enabledTags].toSorted((a, b) => a.localeCompare(b)).join("|") +
-    (dictionaryOverrides ? JSON.stringify(dictionaryOverrides) : "");
-  return matcherCacheEnsure(key, () => {
+  const tagKey = [...enabledTags].toSorted((a, b) => a.localeCompare(b)).join("|");
+  // dictionaryOverrides are typically unique per config — skip caching when present.
+  if (dictionaryOverrides) {
     const entries = loadDictionary().filter((entry: Entry) =>
       entry.tags.some((tag: string) => enabledTags.includes(tag)),
     );
-    if (dictionaryOverrides) {
-      entries.push(...dictionaryOverrides);
-    }
+    entries.push(...dictionaryOverrides);
+    return buildMatcher(entries);
+  }
+  return matcherCacheEnsure(tagKey, () => {
+    const entries = loadDictionary().filter((entry: Entry) =>
+      entry.tags.some((tag: string) => enabledTags.includes(tag)),
+    );
     return buildMatcher(entries);
   });
 };
