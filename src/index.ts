@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 import type { TextlintRuleModule } from "@textlint/types";
+import type { TxtNode } from "@textlint/ast-node-types";
 import { loadDictionary, type Entry } from "./dictionary.js";
 import { preserveCase } from "./case-preserve.js";
 
@@ -20,6 +21,11 @@ export type Options = {
 const escape = (s: string): string => s.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
 
 const NEVER_MATCH = /(?!)/gu;
+
+// Strip HTML tags so tag names and attributes don't produce false positives.
+// Each tag is replaced with spaces of equal length so match offsets stay valid.
+const stripTags = (html: string): string =>
+  html.replaceAll(/<[^>]*>/g, (match) => " ".repeat(match.length));
 
 // Unicode-aware word boundary: matches where the adjacent char is NOT a
 // letter, digit, or underscore — equivalent to \b but works for Cyrillic,
@@ -102,29 +108,39 @@ const reporter: TextlintRuleModule<Options> = (context, options = {}) => {
   const { Syntax, RuleError, fixer, report, getSource } = context;
   const matcher = getMatcher(resolveEnabledTags(options), options.dictionaryOverrides);
 
+  const checkText = (node: TxtNode, text: string, offset = 0) => {
+    matcher.pattern.lastIndex = 0;
+    let m: RegExpExecArray | null;
+    while ((m = matcher.pattern.exec(text)) !== null) {
+      const wrong = m[0];
+      const entry = matcher.byLowerWrong.get(wrong.toLowerCase());
+      if (!entry) continue;
+      const replacement = entry.exact ? entry.correct : preserveCase(wrong, entry.correct);
+      if (replacement === wrong) continue;
+      const start = offset + m.index;
+      const end = start + wrong.length;
+      report(
+        node,
+        new RuleError(buildMessage(wrong, replacement, entry), {
+          index: start,
+          fix: fixer.replaceTextRange([start, end], replacement),
+        }),
+      );
+    }
+  };
+
   return {
     [Syntax.Str](node) {
-      const text = getSource(node);
-      // Reset lastIndex each time — pattern is shared and stateful.
-      matcher.pattern.lastIndex = 0;
-      let m: RegExpExecArray | null;
-      while ((m = matcher.pattern.exec(text)) !== null) {
-        const wrong = m[0];
-        const entry = matcher.byLowerWrong.get(wrong.toLowerCase());
-        if (!entry) continue;
-        const replacement = entry.exact ? entry.correct : preserveCase(wrong, entry.correct);
-        // Skip entries where matched text already equals the correct spelling.
-        if (replacement === wrong) continue;
-        const start = m.index;
-        const end = start + wrong.length;
-        report(
-          node,
-          new RuleError(buildMessage(wrong, replacement, entry), {
-            index: start,
-            fix: fixer.replaceTextRange([start, end], replacement),
-          }),
-        );
-      }
+      checkText(node, getSource(node));
+    },
+    [Syntax.Image](node) {
+      if (node.alt) checkText(node, node.alt, 2);
+    },
+    [Syntax.ImageReference](node) {
+      if (node.alt) checkText(node, node.alt, 2);
+    },
+    [Syntax.Html](node) {
+      checkText(node, stripTags(node.value));
     },
   };
 };

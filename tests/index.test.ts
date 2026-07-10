@@ -266,3 +266,77 @@ tester.run("geo: false — place names not checked", rule, {
   valid: [{ text: "Artyomovsk is still there.", options: { geo: false } }],
   invalid: [],
 });
+
+// --- Image alt text -----------------------------------------------------------
+
+tester.run("Image — flags russified name in alt text", rule, {
+  valid: ["![Bakhmut photo](img.png)", "![](img.png)"],
+  invalid: [
+    {
+      text: "![Artyomovsk cityscape](img.png)",
+      output: "![Artemivsk cityscape](img.png)",
+      errors: [
+        {
+          message:
+            '"Artyomovsk" is a russified place name. Use the Ukrainian spelling "Artemivsk" (artemivsk).',
+        },
+      ],
+    },
+    {
+      text: "![ARTYOMOVSK overview](img.png)",
+      output: "![ARTEMIVSK overview](img.png)",
+      errors: [
+        {
+          message:
+            '"ARTYOMOVSK" is a russified place name. Use the Ukrainian spelling "ARTEMIVSK" (artemivsk).',
+        },
+      ],
+    },
+    {
+      text: "![artyomovsk map](img.png)",
+      output: "![artemivsk map](img.png)",
+      errors: [
+        {
+          message:
+            '"artyomovsk" is a russified place name. Use the Ukrainian spelling "artemivsk" (artemivsk).',
+        },
+      ],
+    },
+  ],
+});
+
+// --- Html blocks --------------------------------------------------------------
+
+tester.run("Html — flags russified name in HTML blocks", rule, {
+  valid: ["<div>Bakhmut is a city</div>", "<span>text without matches</span>"],
+  invalid: [
+    {
+      text: "<div>Artyomovsk is a city</div>",
+      output: "<div>Artemivsk is a city</div>",
+      errors: [
+        {
+          message:
+            '"Artyomovsk" is a russified place name. Use the Ukrainian spelling "Artemivsk" (artemivsk).',
+        },
+      ],
+    },
+    {
+      text: "<p>ARTYOMOVSK on the map</p>",
+      output: "<p>ARTEMIVSK on the map</p>",
+      errors: [
+        {
+          message:
+            '"ARTYOMOVSK" is a russified place name. Use the Ukrainian spelling "ARTEMIVSK" (artemivsk).',
+        },
+      ],
+    },
+  ],
+});
+
+tester.run("Html — word boundaries prevent matching inside tags", rule, {
+  valid: [
+    // Tag names must not be matched.
+    "<artyomovsk>text</artyomovsk>",
+  ],
+  invalid: [],
+});
