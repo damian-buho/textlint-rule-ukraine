@@ -24,8 +24,23 @@ const NEVER_MATCH = /(?!)/gu;
 
 // Strip HTML tags so tag names and attributes don't produce false positives.
 // Each tag is replaced with spaces of equal length so match offsets stay valid.
-const stripTags = (html: string): string =>
-  html.replaceAll(/<[^>]*>/g, (match) => " ".repeat(match.length));
+// Uses a linear scan instead of a regex to avoid polynomial backtracking on
+// strings with many unmatched '<' characters.
+const stripTags = (html: string): string => {
+  const result = html.split("");
+  let index = 0;
+  while (index < result.length) {
+    if (result[index] !== "<") {
+      index++;
+      continue;
+    }
+    const close = result.indexOf(">", index);
+    if (close === -1) break;
+    for (let k = index; k <= close; k++) result[k] = " ";
+    index = close + 1;
+  }
+  return result.join("");
+};
 
 // Unicode-aware word boundary: matches where the adjacent char is NOT a
 // letter, digit, or underscore — equivalent to \b but works for Cyrillic,
