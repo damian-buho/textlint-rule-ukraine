@@ -59,7 +59,7 @@
     "eslint-plugin-n": "18.2.2",
     "eslint-plugin-promise": "7.3.0",
     "eslint-plugin-tsdoc": "0.5.2",
-    "eslint-plugin-unicorn": "71.1.0",
+    "eslint-plugin-unicorn": "72.0.0",
     "globals": "17.7.0",
     "prettier": "3.9.5",
     "textlint": "15.7.1",
