@@ -65,7 +65,7 @@
     "textlint": "15.7.1",
     "textlint-tester": "15.7.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.63.0"
+    "typescript-eslint": "8.64.0"
   },
   "bugs": {
     "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine/issues"
