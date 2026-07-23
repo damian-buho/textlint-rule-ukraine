@@ -44,6 +44,10 @@
     "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine",
     "type": "git"
   },
+  "overrides":
+  {
+    "@hono/node-server": "2.0.11"
+  },
   "peerDependencies": {
     "textlint": ">=13.0.0"
   },
