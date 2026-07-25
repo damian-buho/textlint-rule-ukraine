@@ -45,7 +45,10 @@ update:
 audit:
     npm run audit
 
-pipeline: format lint build build-test test
+validate-dict:
+    npm run validate:dict
+
+pipeline: format lint validate-dict build build-test test
 
 publish:
     npm publish
