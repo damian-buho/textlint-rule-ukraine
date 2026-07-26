@@ -30,8 +30,9 @@
     "prepublishOnly": "npm run build",
     "lint": "eslint ./",
     "fix": "eslint ./ --fix",
-    "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts' 'data/**/*.json'",
-    "format:check": "prettier --check 'src/**/*.ts' 'tests/**/*.ts' 'data/**/*.json'"
+    "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts' 'scripts/**/*.ts' 'data/**/*.json'",
+    "format:check": "prettier --check 'src/**/*.ts' 'tests/**/*.ts' 'scripts/**/*.ts' 'data/**/*.json'",
+    "validate:dict": "tsc --project tsconfig.validate.json && node dist/scripts/validate-dictionary.js"
   },
   "keywords": [
     "textlint",
@@ -44,6 +45,9 @@
     "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine",
     "type": "git"
   },
+  "overrides": {
+    "@hono/node-server": "2.0.11"
+  },
   "peerDependencies": {
     "textlint": ">=13.0.0"
   },
@@ -53,7 +57,9 @@
     "@textlint/types": "15.7.1",
     "@types/eslint": "9.6.1",
     "@types/node": "26.1.1",
-    "eslint": "10.7.0",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "eslint": "10.8.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-import-x": "4.17.1",
     "eslint-plugin-n": "18.2.2",
@@ -61,11 +67,11 @@
     "eslint-plugin-tsdoc": "0.5.2",
     "eslint-plugin-unicorn": "72.0.0",
     "globals": "17.7.0",
-    "prettier": "3.9.5",
+    "prettier": "3.9.6",
     "textlint": "15.7.1",
     "textlint-tester": "15.7.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.64.0"
+    "typescript-eslint": "8.65.0"
   },
   "bugs": {
     "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine/issues"
