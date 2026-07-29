@@ -12,6 +12,7 @@ SPDX-License-Identifier: MIT
 ![NPM Last Update](https://img.shields.io/npm/last-update/textlint-rule-ukraine?style=flat-square)
 ![NPM License](https://img.shields.io/npm/l/textlint-rule-ukraine?style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/damian-buho/textlint-rule-ukraine)
 
 [![Pipeline](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/damian-buho/repolinter/actions/workflows/pipeline.yaml)
 [![CodeQL](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/github-code-scanning/codeql)
