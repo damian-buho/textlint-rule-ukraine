@@ -65,13 +65,13 @@
     "eslint-plugin-n": "18.2.2",
     "eslint-plugin-promise": "7.3.0",
     "eslint-plugin-tsdoc": "0.5.2",
-    "eslint-plugin-unicorn": "72.0.0",
+    "eslint-plugin-unicorn": "73.0.0",
     "globals": "17.9.0",
     "prettier": "3.9.6",
     "textlint": "15.8.0",
     "textlint-tester": "15.8.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.65.0"
+    "typescript-eslint": "8.66.0"
   },
   "bugs": {
     "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine/issues"
