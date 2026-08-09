@@ -56,7 +56,7 @@
     "@textlint/ast-node-types": "15.8.0",
     "@textlint/types": "15.8.0",
     "@types/eslint": "9.6.1",
-    "@types/node": "26.1.2",
+    "@types/node": "26.2.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
     "eslint": "10.8.0",
