@@ -21,9 +21,18 @@ license:
   spdx: MIT
 links:
   - label: textlint-rule-ukraine on Codeberg
+    tags:
+      - public
+      - badges
+      - badges-gitea
     type: source-code
     url: https://codeberg.org/damian-buho/textlint-rule-ukraine
   - label: textlint-rule-ukraine on GitHub
+    preferred: true
+    tags:
+      - public
+      - badges
+      - badges-github
     type: source-code
     url: https://github.com/damian-buho/textlint-rule-ukraine
   - type: bugs
@@ -32,6 +41,9 @@ links:
     url: https://github.com/damian-buho/textlint-rule-ukraine/issues
   - type: package-registry
     url: https://www.npmjs.com/package/textlint-rule-ukraine
+  - label: textlint-rule-ukraine on kiota.ch
+    type: source-code
+    url: https://kiota.ch/damian-buho/textlint-rule-ukraine
 repositories:
   - role: origin
     type: git
@@ -39,9 +51,13 @@ repositories:
   - role: mirror
     type: git
     url: ssh://git@codeberg.org/damian-buho/textlint-rule-ukraine.git
-  - role: mirror
+  - branch: main
+    role: origin
     type: git
     url: git@github.com:damian-buho/textlint-rule-ukraine.git
+  - role: mirror
+    type: git
+    url: ssh://git@kiota.ch/damian-buho/textlint-rule-ukraine.git
 technologies:
   - node
   - typescript
