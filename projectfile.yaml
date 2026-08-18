@@ -7,8 +7,15 @@ identity:
   created: "2026-05-15"
   name: textlint-rule-ukraine
   namespace: me.dbuho
-  summary: textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them
+  summary:
+    en: textlint rule that flags inappropriate transliterations of Ukrainian place/person names and auto-fixes them
+    es: Regla de textlint que señala transliteraciones inapropiadas de nombres ucranianos de lugares y personas, y las corrige automáticamente
+    uk: Правило textlint, яке позначає невідповідні транслітерації українських назв місць та імен людей і виправляє їх автоматично
   title: textlint-rule-ukraine
+  description:
+    en: textlint rule that flags inappropriate transliterations of Ukrainian place and person names and auto-fixes them to the correct forms. Promotes respectful, consistent naming across documentation.
+    es: Regla de textlint que señala transliteraciones inapropiadas de nombres ucranianos de lugares y personas, y las corrige automáticamente a las formas correctas. Promueve una nomenclatura respetuosa y coherente en toda la documentación.
+    uk: Правило textlint, яке позначає невідповідні транслітерації українських назв місць та імен людей і автоматично виправляє їх на правильні форми. Сприяє шанобливому й послідовному найменуванню в усій документації.
 includes:
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
 keywords:
@@ -16,32 +23,68 @@ keywords:
   - ukraine
   - spelling
   - transliteration
+  - rule
+  - linter
 kind: SoftwareSourceCode
 license:
   spdx: MIT
 links:
-  - label: textlint-rule-ukraine on Codeberg
+  - label:
+      en: textlint-rule-ukraine on Codeberg
+      es: textlint-rule-ukraine en Codeberg
+      uk: textlint-rule-ukraine на Codeberg
+    tags:
+      - public
+      - badges
+      - badges-gitea
     type: source-code
     url: https://codeberg.org/damian-buho/textlint-rule-ukraine
-  - label: textlint-rule-ukraine on GitHub
+  - label:
+      en: textlint-rule-ukraine on GitHub
+      es: textlint-rule-ukraine en GitHub
+      uk: textlint-rule-ukraine на GitHub
+    preferred: true
+    tags:
+      - public
+      - badges
+      - badges-github
     type: source-code
     url: https://github.com/damian-buho/textlint-rule-ukraine
-  - type: bugs
+  - label:
+      en: Issues on Codeberg
+      es: Incidencias en Codeberg
+      uk: Issues на Codeberg
+    tags:
+      - support
+    type: bugs
     url: https://codeberg.org/damian-buho/textlint-rule-ukraine/issues
-  - type: bugs
+  - label:
+      en: Issues on GitHub
+      es: Incidencias en GitHub
+      uk: Issues на GitHub
+    tags:
+      - support
+    type: bugs
     url: https://github.com/damian-buho/textlint-rule-ukraine/issues
   - type: package-registry
     url: https://www.npmjs.com/package/textlint-rule-ukraine
+  - label:
+      en: textlint-rule-ukraine on kiota.ch
+      es: textlint-rule-ukraine en kiota.ch
+      uk: textlint-rule-ukraine на kiota.ch
+    type: source-code
+    url: https://kiota.ch/damian-buho/textlint-rule-ukraine
 repositories:
-  - role: origin
-    type: git
-    url: https://codeberg.org/damian-buho/textlint-rule-ukraine
   - role: mirror
     type: git
     url: ssh://git@codeberg.org/damian-buho/textlint-rule-ukraine.git
-  - role: mirror
+  - branch: main
+    role: origin
     type: git
     url: git@github.com:damian-buho/textlint-rule-ukraine.git
+  - role: mirror
+    type: git
+    url: ssh://git@kiota.ch/damian-buho/textlint-rule-ukraine.git
 technologies:
   - node
   - typescript
