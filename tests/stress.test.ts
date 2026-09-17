@@ -154,14 +154,10 @@ describe("stress — full dictionary with all tags", () => {
     for (const word of innocent) {
       matcher.pattern.lastIndex = 0;
       const match = matcher.pattern.exec(word);
-      if (match) {
-        // Some innocent words might match if they happen to be in the
-        // dictionary (e.g. "Sumi" → "Sumy" in geo). Just log and skip.
-        const entry = matcher.byLowerWrong.get(match[0].toLowerCase());
-        if (entry) {
-          console.log(`INFO: "${word}" matches entry "${entry.id}" — expected?`);
-        }
-      }
+      if (!match) continue;
+      const entry = matcher.byLowerWrong.get(match[0].toLowerCase());
+      if (!entry) continue;
+      console.log(`INFO: "${word}" matches entry "${entry.id}" — expected?`);
     }
   });
 
