@@ -16,6 +16,7 @@ identity:
     en: textlint rule that flags inappropriate transliterations of Ukrainian place and person names and auto-fixes them to the correct forms. Promotes respectful, consistent naming across documentation.
     es: Regla de textlint que señala transliteraciones inapropiadas de nombres ucranianos de lugares y personas, y las corrige automáticamente a las formas correctas. Promueve una nomenclatura respetuosa y coherente en toda la documentación.
     uk: Правило textlint, яке позначає невідповідні транслітерації українських назв місць та імен людей і автоматично виправляє їх на правильні форми. Сприяє шанобливому й послідовному найменуванню в усій документації.
+  version: 1.5.5
 includes:
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
 keywords:

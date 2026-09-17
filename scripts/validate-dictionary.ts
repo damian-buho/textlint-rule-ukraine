@@ -48,11 +48,10 @@ if (!valid) {
   for (const error of errors) {
     const instancePath = error.instancePath || "/";
     console.error(`  ${instancePath} — ${error.message ?? "unknown error"}`);
-    if (error.params) {
-      const entries = Object.entries(error.params);
-      for (const [key, value] of entries) {
-        console.error(`    ${key}: ${JSON.stringify(value)}`);
-      }
+    if (!error.params) continue;
+    const entries = Object.entries(error.params);
+    for (const [key, value] of entries) {
+      console.error(`    ${key}: ${JSON.stringify(value)}`);
     }
   }
   throw new Error("schema validation failed");

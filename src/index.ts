@@ -100,23 +100,19 @@ const getMatcher = (enabledTags: string[], dictionaryOverrides?: Entry[]) => {
   });
 };
 
-const resolveEnabledTags = (options: Options): string[] => {
-  const tags: string[] = [];
-  // geo is on by default; opt out with geo: false
-  if (options.geo !== false) tags.push("geo");
-  if (options.names === true) tags.push("names");
-  if (options.extra === true) tags.push("extra");
-  return tags;
-};
+const resolveEnabledTags = (options: Options): string[] => [
+  ...(options.geo === false ? [] : ["geo"]),
+  ...(options.names === true ? ["names"] : []),
+  ...(options.extra === true ? ["extra"] : []),
+];
 
 const buildMessage = (wrong: string, replacement: string, entry: Entry): string => {
   if (entry.tags.includes("names")) {
     return `"${wrong}" is a russified personal name. Use the Ukrainian form "${replacement}" (${entry.id}).`;
   }
-  if (entry.tags.includes("extra")) {
-    return `"${wrong}" should be written as "${replacement}" (${entry.id}).`;
-  }
-  return `"${wrong}" is a russified place name. Use the Ukrainian spelling "${replacement}" (${entry.id}).`;
+  return entry.tags.includes("extra")
+    ? `"${wrong}" should be written as "${replacement}" (${entry.id}).`
+    : `"${wrong}" is a russified place name. Use the Ukrainian spelling "${replacement}" (${entry.id}).`;
 };
 
 const reporter: TextlintRuleModule<Options> = (context, options = {}) => {

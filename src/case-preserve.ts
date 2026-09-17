@@ -14,14 +14,11 @@ export const preserveCase = (matched: string, replacement: string): string => {
     return replacement.toLowerCase();
   }
   const first = matched.at(0);
-  if (
+  const isTitle =
     first !== undefined &&
     first === first.toUpperCase() &&
-    matched.slice(1) === matched.slice(1).toLowerCase()
-  ) {
-    // Title case → Title case
-    return replacement.charAt(0).toUpperCase() + replacement.slice(1).toLowerCase();
-  }
-  // Mixed / unrecognised → return canonical replacement unchanged
-  return replacement;
+    matched.slice(1) === matched.slice(1).toLowerCase();
+  return isTitle
+    ? replacement.charAt(0).toUpperCase() + replacement.slice(1).toLowerCase()
+    : replacement;
 };
