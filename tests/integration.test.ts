@@ -18,7 +18,14 @@ const PKG = JSON.parse(readFileSync(path.join(ROOT, "package.json"), "utf8")) as
 };
 
 const packAndInstall = (workDirectory: string): void => {
-  const tarball = execSync("npm pack --silent", { cwd: ROOT, encoding: "utf8" }).trim();
+  // Drop npm_config_allow_scripts leaked from `npm test`; this npm rejects it for project installs (EALLOWSCRIPTS).
+  const environment = { ...process.env };
+  delete environment["npm_config_allow_scripts"];
+  const tarball = execSync("npm pack --silent", {
+    cwd: ROOT,
+    encoding: "utf8",
+    env: environment,
+  }).trim();
   const tarballPath = path.join(ROOT, tarball);
   writeFileSync(
     path.join(workDirectory, "package.json"),
@@ -36,7 +43,7 @@ const packAndInstall = (workDirectory: string): void => {
       2,
     ),
   );
-  execSync("npm install --silent", { cwd: workDirectory, stdio: "pipe" });
+  execSync("npm install --silent", { cwd: workDirectory, stdio: "pipe", env: environment });
 };
 
 const runTextlint = (
