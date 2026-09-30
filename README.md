@@ -14,7 +14,7 @@ SPDX-License-Identifier: MIT
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/damian-buho/textlint-rule-ukraine?style=flat-square)
 
-[![Pipeline](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/damian-buho/repolinter/actions/workflows/pipeline.yaml)
+[![Pipeline](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/pipeline.yaml)
 [![CodeQL](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/damian-buho/textlint-rule-ukraine/actions/workflows/github-code-scanning/codeql)
 [![Known Vulnerabilities](https://snyk.io/test/npm/textlint-rule-ukraine/badge.svg)](https://snyk.io/test/npm/textlint-rule-ukraine)
 [![REUSE status](https://api.reuse.software/badge/github.com/damian-buho/textlint-rule-ukraine)](https://api.reuse.software/info/github.com/damian-buho/textlint-rule-ukraine)
@@ -45,13 +45,13 @@ Add the rule to your `.textlintrc`:
 Lint your Markdown files:
 
 ```shell
-npx textlint docs/**/*.md
+npx textlint "docs/**/*.md"
 ```
 
 Auto-fix in place:
 
 ```shell
-npx textlint --fix docs/**/*.md
+npx textlint --fix "docs/**/*.md"
 ```
 
 Replacements are case-preserving:
@@ -148,4 +148,4 @@ Dictionary improvements go directly in `data/dictionary.json`. Rule improvements
 
 ## License
 
-MIT
+[MIT](LICENSE)
