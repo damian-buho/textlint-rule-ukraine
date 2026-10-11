@@ -42,7 +42,7 @@
   ],
   "license": "MIT",
   "repository": {
-    "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine",
+    "url": "https://github.com/damian-buho/textlint-rule-ukraine",
     "type": "git"
   },
   "overrides": {
@@ -74,7 +74,7 @@
     "typescript-eslint": "8.71.1"
   },
   "bugs": {
-    "url": "https://codeberg.org/damian-buho/textlint-rule-ukraine/issues"
+    "url": "https://github.com/damian-buho/textlint-rule-ukraine/issues"
   },
   "author": {
     "name": "Damián Búho",

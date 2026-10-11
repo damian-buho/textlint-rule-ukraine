@@ -31,16 +31,6 @@ license:
   spdx: MIT
 links:
   - label:
-      en: textlint-rule-ukraine on Codeberg
-      es: textlint-rule-ukraine en Codeberg
-      uk: textlint-rule-ukraine на Codeberg
-    tags:
-      - public
-      - badges
-      - badges-gitea
-    type: source-code
-    url: https://codeberg.org/damian-buho/textlint-rule-ukraine
-  - label:
       en: textlint-rule-ukraine on GitHub
       es: textlint-rule-ukraine en GitHub
       uk: textlint-rule-ukraine на GitHub
@@ -52,13 +42,15 @@ links:
     type: source-code
     url: https://github.com/damian-buho/textlint-rule-ukraine
   - label:
-      en: Issues on Codeberg
-      es: Incidencias en Codeberg
-      uk: Issues на Codeberg
+      en: textlint-rule-ukraine on Codeberg
+      es: textlint-rule-ukraine en Codeberg
+      uk: textlint-rule-ukraine на Codeberg
     tags:
-      - support
-    type: bugs
-    url: https://codeberg.org/damian-buho/textlint-rule-ukraine/issues
+      - public
+      - badges
+      - badges-gitea
+    type: source-code
+    url: https://codeberg.org/damian-buho/textlint-rule-ukraine
   - label:
       en: Issues on GitHub
       es: Incidencias en GitHub
@@ -67,6 +59,14 @@ links:
       - support
     type: bugs
     url: https://github.com/damian-buho/textlint-rule-ukraine/issues
+  - label:
+      en: Issues on Codeberg
+      es: Incidencias en Codeberg
+      uk: Issues на Codeberg
+    tags:
+      - support
+    type: bugs
+    url: https://codeberg.org/damian-buho/textlint-rule-ukraine/issues
   - type: package-registry
     url: https://www.npmjs.com/package/textlint-rule-ukraine
   - label:

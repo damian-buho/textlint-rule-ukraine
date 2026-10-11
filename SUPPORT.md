@@ -14,12 +14,12 @@ This document explains where to get help and how to ask effective questions.
 
 Please check these first — your question may already be answered:
 
-- [Existing issues](https://codeberg.org/damian-buho/textlint-rule-ukraine/issues)
+- [Existing issues](https://github.com/damian-buho/textlint-rule-ukraine/issues)
 - [Existing issues](https://github.com/damian-buho/textlint-rule-ukraine/issues)
 
 ## Where to Ask
 
-- **Report a reproducible bug** — [Issues](https://codeberg.org/damian-buho/textlint-rule-ukraine/issues)
+- **Report a reproducible bug** — [Issues](https://github.com/damian-buho/textlint-rule-ukraine/issues)
 - **Report a reproducible bug** — [Issues](https://github.com/damian-buho/textlint-rule-ukraine/issues)
 - **Report a security vulnerability** — [SECURITY.md](SECURITY.md)
 - **Contribute to the project** — [CONTRIBUTING.md](CONTRIBUTING.md)
