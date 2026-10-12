@@ -49,9 +49,9 @@ const packAndInstall = (workDirectory: string): void => {
 const runTextlint = (
   workDirectory: string,
   text: string,
-  options?: Record<string, unknown>,
+  options: Record<string, unknown> | boolean = true,
 ): string => {
-  const rules = { "textlint-rule-ukraine": options ?? true };
+  const rules = { "textlint-rule-ukraine": options };
   writeFileSync(
     path.join(workDirectory, ".textlintrc.json"),
     JSON.stringify({ rules }, undefined, 2),
