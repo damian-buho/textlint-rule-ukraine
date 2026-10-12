@@ -11,7 +11,7 @@ import tsdocPlugin from 'eslint-plugin-tsdoc'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
-export default tseslint.config(
+const config = tseslint.config(
   {
     ignores: [
       'coverage/',
@@ -26,7 +26,7 @@ export default tseslint.config(
   nPlugin.configs['flat/recommended-module'],
   flatConfigs.recommended,
   promisePlugin.configs['flat/recommended'],
-  unicornPlugin.configs['flat/recommended'],
+  unicornPlugin.configs['recommended'],
   prettierConfig,
   {
     files: ['**/*.js', '**/*.ts'],
@@ -71,3 +71,5 @@ export default tseslint.config(
     }
   }
 )
+
+export default config

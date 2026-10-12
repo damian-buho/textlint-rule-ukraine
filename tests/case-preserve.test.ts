@@ -8,8 +8,8 @@ import { preserveCase } from "../src/case-preserve.js";
 
 // Helper: assert that preserveCase matches the replacement without any
 // modification (the "mixed / unrecognised" fallback path).
-const assertUnchanged = (matched: string, replacement: string) => {
-  assert.equal(preserveCase(matched, replacement), replacement);
+const assertUnchanged = (matched: string) => {
+  assert.equal(preserveCase(matched, "Bakhmut"), "Bakhmut");
 };
 
 describe("preserveCase — empty string", () => {
@@ -76,8 +76,8 @@ describe("preserveCase — casing paths", () => {
   });
 
   it("mixed case falls through to unchanged", () => {
-    assertUnchanged("bAhMuT", "Bakhmut");
-    assertUnchanged("BAHmut", "Bakhmut");
+    assertUnchanged("bAhMuT");
+    assertUnchanged("BAHmut");
   });
 });
 
@@ -90,8 +90,8 @@ describe("preserveCase — non-alphabetic/casing boundary", () => {
     // "1abc" → all same case (lowercase), so lowercase path
     assert.equal(preserveCase("1abc", "Bakhmut"), "bakhmut");
     // Mixed digit+letter casing → mixed/unrecognised fallback
-    assertUnchanged("1Abc", "Bakhmut");
-    assertUnchanged("1aBC", "Bakhmut");
+    assertUnchanged("1Abc");
+    assertUnchanged("1aBC");
   });
 });
 
@@ -114,7 +114,7 @@ describe("preserveCase — Unicode normalization", () => {
     // U+00E9 (precomposed é) — all lowercase
     assert.equal(preserveCase("\u{00E9}", "Bakhmut"), "bakhmut");
     // U+0045 U+0301 (decomposed E + combining acute) — all uppercase
-    assert.equal(preserveCase("\u{0045}\u{0301}", "Bakhmut"), "BAKHMUT");
+    assert.equal(preserveCase("E\u{0301}", "Bakhmut"), "BAKHMUT");
   });
 
   it("NFC title-case works", () => {
