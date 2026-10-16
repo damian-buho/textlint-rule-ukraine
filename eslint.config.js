@@ -18,11 +18,12 @@ const config = tseslint.config(
       'node_modules/',
       'tmp/',
       'out/',
-      'dist/'
+      'dist/',
+      '**/*.tmp.*'
     ]
   },
   js.configs.recommended,
-  ...tseslint.configs.recommended,
+  ...tseslint.configs.strict,
   nPlugin.configs['flat/recommended-module'],
   flatConfigs.recommended,
   promisePlugin.configs['flat/recommended'],
@@ -59,7 +60,8 @@ const config = tseslint.config(
         'warn',
         {
           argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_'
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true
         }
       ]
     }
