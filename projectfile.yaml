@@ -20,12 +20,18 @@ identity:
 includes:
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
 keywords:
-  - textlint
-  - ukraine
-  - spelling
-  - transliteration
-  - rule
+  - copyediting
   - linter
+  - orthography
+  - proofreading
+  - spelling
+  - technical-writing
+  - textlint
+  - textlint-rule
+  - toponymy
+  - transliteration
+  - ukraine
+  - ukrainian
 kind: SoftwareSourceCode
 license:
   spdx: MIT
