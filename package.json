@@ -42,7 +42,7 @@
   ],
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/damian-buho/textlint-rule-ukraine",
+    "url": "git+https://github.com/damian-buho/textlint-rule-ukraine.git",
     "type": "git"
   },
   "overrides": {
