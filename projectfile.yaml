@@ -17,6 +17,7 @@ identity:
     es: Regla de textlint que señala transliteraciones inapropiadas de nombres ucranianos de lugares y personas, y las corrige automáticamente a las formas correctas. Promueve una nomenclatura respetuosa y coherente en toda la documentación.
     uk: Правило textlint, яке позначає невідповідні транслітерації українських назв місць та імен людей і автоматично виправляє їх на правильні форми. Сприяє шанобливому й послідовному найменуванню в усій документації.
   version: 1.5.5
+  modified: "2026-10-16"
   visibility: private
 includes:
   - https://kiota.ch/damian-buho/metadata/raw/branch/main/include.yaml
@@ -38,9 +39,9 @@ license:
   spdx: MIT
 links:
   - label:
-      en: textlint-rule-ukraine on GitHub
-      es: textlint-rule-ukraine en GitHub
-      uk: textlint-rule-ukraine на GitHub
+      en: Repository on GitHub
+      es: Repositorio en GitHub
+      uk: Репозиторій на GitHub
     preferred: true
     tags:
       - public
@@ -49,9 +50,9 @@ links:
     type: source-code
     url: https://github.com/damian-buho/textlint-rule-ukraine
   - label:
-      en: textlint-rule-ukraine on Codeberg
-      es: textlint-rule-ukraine en Codeberg
-      uk: textlint-rule-ukraine на Codeberg
+      en: Repository on Codeberg
+      es: Repositorio en Codeberg
+      uk: Репозиторій на Codeberg
     tags:
       - public
       - badges
@@ -61,7 +62,7 @@ links:
   - label:
       en: Issues on GitHub
       es: Incidencias en GitHub
-      uk: Issues на GitHub
+      uk: Задачі на GitHub
     tags:
       - support
     type: bugs
@@ -69,7 +70,7 @@ links:
   - label:
       en: Issues on Codeberg
       es: Incidencias en Codeberg
-      uk: Issues на Codeberg
+      uk: Задачі на Codeberg
     tags:
       - support
     type: bugs
@@ -77,9 +78,9 @@ links:
   - type: package-registry
     url: https://www.npmjs.com/package/textlint-rule-ukraine
   - label:
-      en: textlint-rule-ukraine on kiota.ch
-      es: textlint-rule-ukraine en kiota.ch
-      uk: textlint-rule-ukraine на kiota.ch
+      en: Repository on kiota.ch
+      es: Repositorio en kiota.ch
+      uk: Репозиторій на kiota.ch
     type: source-code
     url: https://kiota.ch/damian-buho/textlint-rule-ukraine
 repositories:
