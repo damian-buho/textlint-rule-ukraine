@@ -46,7 +46,8 @@
     "type": "git"
   },
   "overrides": {
-    "@hono/node-server": "2.0.11"
+    "@hono/node-server": "2.0.11",
+    "qs": "6.16.1"
   },
   "peerDependencies": {
     "textlint": ">=13.0.0"
