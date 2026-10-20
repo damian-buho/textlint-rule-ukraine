@@ -123,3 +123,9 @@ describe("preserveCase — Unicode normalization", () => {
     assert.equal(preserveCase("ß", "Bakhmut"), "bakhmut");
   });
 });
+
+describe("preserveCase — mutation killer", () => {
+  it("mixed case with lowercase replacement stays unchanged", () => {
+    assert.equal(preserveCase("BAHmut", "bakhmut"), "bakhmut");
+  });
+});

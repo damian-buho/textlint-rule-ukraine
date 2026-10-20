@@ -13,11 +13,8 @@ export const preserveCase = (matched: string, replacement: string): string => {
     // all lower → all lower
     return replacement.toLowerCase();
   }
-  const first = matched.at(0);
-  const isTitle =
-    first !== undefined &&
-    first === first.toUpperCase() &&
-    matched.slice(1) === matched.slice(1).toLowerCase();
+  // Title case: tail is entirely lowercase (head case already non-uniform).
+  const isTitle = matched.slice(1) === matched.slice(1).toLowerCase();
   return isTitle
     ? replacement.charAt(0).toUpperCase() + replacement.slice(1).toLowerCase()
     : replacement;

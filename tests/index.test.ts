@@ -340,3 +340,100 @@ tester.run("Html — word boundaries prevent matching inside tags", rule, {
   ],
   invalid: [],
 });
+
+// --- escape: dictionary strings are treated literally ------------------------
+
+tester.run("escape — metacharacters in dictionary entries are literal", rule, {
+  valid: [
+    // An unescaped dot would also match "aXb"; the escaped version must not.
+    "aXb is fine.",
+  ],
+  invalid: [
+    {
+      text: "a.b is here.",
+      output: "X.Y is here.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["a.b"], correct: "X.Y", id: "escape-test", tags: ["geo"], exact: true },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"a.b" is a russified place name. Use the Ukrainian spelling "X.Y" (escape-test).',
+        },
+      ],
+    },
+  ],
+});
+
+// --- stripTags: unmatched '<' must not hang or corrupt offsets ----------------
+
+tester.run("Html — unmatched less-than signs are handled", rule, {
+  valid: ["<div>Bakhmut is a city", "<div>5 < 3 and Bakhmut</div>"],
+  invalid: [],
+});
+
+// --- WB.open: a wrong string embedded after a prefix must not match ----------
+
+tester.run("geo — open word boundary rejects prefixed matches", rule, {
+  valid: ["prefixArtyomovsk should not match.", "xxМаневичи is not a match."],
+  invalid: [],
+});
+
+// --- ImageReference and images without alt -----------------------------------
+
+tester.run("ImageReference — flags russified name in alt text", rule, {
+  valid: ["![Bakhmut photo][ref]\n\n[ref]: img.png", "![][ref]\n\n[ref]: img.png"],
+  invalid: [
+    {
+      text: "![Artyomovsk cityscape][ref]\n\n[ref]: img.png",
+      output: "![Artemivsk cityscape][ref]\n\n[ref]: img.png",
+      errors: [
+        {
+          message:
+            '"Artyomovsk" is a russified place name. Use the Ukrainian spelling "Artemivsk" (artemivsk).',
+        },
+      ],
+    },
+  ],
+});
+
+tester.run("Image — without alt text is skipped", rule, {
+  valid: ["![](img.png)", "![   ](img.png)"],
+  invalid: [],
+});
+
+// --- overrides branch keeps base filtering -----------------------------------
+
+tester.run("overrides — base entries stay filtered by enabled tags", rule, {
+  valid: [
+    {
+      // geo is disabled, so the base geo entry must not flag even with overrides.
+      text: "Artyomovsk is still there.",
+      options: {
+        geo: false,
+        dictionaryOverrides: [
+          { wrong: ["Tsarytsyn"], correct: "Tsaritsyn", id: "tsaritsyn", tags: ["geo"] },
+        ],
+      },
+    },
+  ],
+  invalid: [
+    {
+      // A base geo entry still matches when geo is enabled.
+      text: "Artyomovsk is a city.",
+      options: {
+        dictionaryOverrides: [
+          { wrong: ["Tsarytsyn"], correct: "Tsaritsyn", id: "tsaritsyn", tags: ["geo"] },
+        ],
+      },
+      errors: [
+        {
+          message:
+            '"Artyomovsk" is a russified place name. Use the Ukrainian spelling "Artemivsk" (artemivsk).',
+        },
+      ],
+    },
+  ],
+});
