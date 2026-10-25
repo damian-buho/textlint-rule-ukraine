@@ -8,8 +8,6 @@ import { loadDictionary, type Entry } from "../src/dictionary.js";
 import { preserveCase } from "../src/case-preserve.js";
 import { buildMatcher } from "../src/index.js";
 
-type Matcher = ReturnType<typeof buildMatcher>;
-
 // Mulberry32 — simple seeded 32-bit PRNG for deterministic test data.
 const mulberry32 = (seed: number): (() => number) => {
   let state = seed;
@@ -43,6 +41,7 @@ const generateLongText = (paragraphs: number, seed = 42): string => {
 };
 
 describe("stress — full dictionary with all tags", () => {
+  type Matcher = ReturnType<typeof buildMatcher>;
   let matcher: Matcher;
   let allEntries: Entry[];
 
