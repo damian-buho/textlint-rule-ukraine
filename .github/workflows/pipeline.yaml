@@ -44,7 +44,7 @@ jobs:
         run: npm run format:check
 
       - name: Audit
-        run: npm audit --audit-level=critical
+        run: npm run audit
 
   test:
     name: Test (Node ${{ matrix.node-version }} / ${{ matrix.os }})
