@@ -72,7 +72,7 @@
     "eslint-plugin-tsdoc": "0.5.4",
     "eslint-plugin-unicorn": "79.0.0",
     "globals": "17.14.0",
-    "prettier": "3.9.10",
+    "prettier": "3.10.1",
     "textlint": "15.8.0",
     "textlint-tester": "15.8.0",
     "typescript": "6.0.3",
